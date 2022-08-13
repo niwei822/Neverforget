@@ -11,10 +11,8 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class Service {
-    var entries: [[String : Dictionary<String, String>]]
-    init() {
-        entries = []
-    }
+    var pickup_list : [PickupReturnModel] = []
+    var return_list : [PickupReturnModel] = []
     
     static func signUpUser(email: String, password: String, name: String, onSuccess: @escaping() -> Void, onError: @escaping (_ error: Error?) -> Void) {
         let auth = Auth.auth()
@@ -55,27 +53,22 @@ class Service {
             onError(error)
         }
 
-
-        var entries: [[String : Dictionary<String, String>]] = []
         ref.child("users").child(uid).child("entries").observe(.value, with: { (snapshot) in
-            entries = []
+            self.pickup_list = []
+            self.return_list = []
+
             for snap in snapshot.children {
                 let userSnap = snap as! DataSnapshot
-                //print(userSnap.key)
                 let userdict = userSnap.value as? NSDictionary
-                var eachEntry: [String: Dictionary] = [String: Dictionary<String, String>]()
-                var tempDict : [String: String] = [:]
-                tempDict["storeName"] = (userdict?.value(forKey: "storeName") as! String)
-                tempDict["item"] = (userdict?.value(forKey: "item") as! String)
-                tempDict["notes"] = (userdict?.value(forKey: "notes") as! String)
-                tempDict["duedate"] = (userdict?.value(forKey: "duedate") as! String)
-                tempDict["options"] = (userdict?.value(forKey: "options") as! String)
-                eachEntry[userSnap.key] = tempDict
-                entries.append(eachEntry)
+                let formatteddate = Service.stringToDate(date: userdict?.value(forKey: "duedate") as! String)
+                let entry = PickupReturnModel(storeName: userdict?.value(forKey: "storeName") as! String, itemTitle: userdict?.value(forKey: "item") as! String, dueDate: formatteddate, notes: userdict?.value(forKey: "notes") as! String, options: userdict?.value(forKey: "options") as! String, timestamp: userSnap.key)
+                if entry.options == "Pickup" {
+                    self.pickup_list.append(entry)
+                } else if entry.options == "Return" {
+                    self.return_list.append(entry)
+                }
                 onSuccess()
             }
-            self.entries = entries
-            //print(self.entries)
         })
         { (error) in
             onError(error)
@@ -95,11 +88,7 @@ class Service {
         let rootref = Database.database().reference()
         let ref = rootref.child("users")
         let uid = Auth.auth().currentUser?.uid
-//        let count = ref.child(uid!).child("entries").observe(DataEventType.value, with: { (snapshot) in
-//            print(snapshot.childrenCount)
-//        })
-//        print(count)
-        //let timestamp = String(Int(NSDate().timeIntervalSince1970))
+
         ref.child(uid!).child("entries").updateChildValues([timestamp: [
             "storeName": storeName,
             "item": itemName,
@@ -120,11 +109,16 @@ class Service {
         }
     }
     
-    static func formattedDate(date: Date) -> String
-    {
+    static func formattedDate(date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM-dd-yyyy HH:mm"
         return formatter.string(from: date)
+    }
+    
+    static func stringToDate(date: String) -> Date {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-yyyy HH:mm"
+        return formatter.date(from: date)!
     }
 }
 

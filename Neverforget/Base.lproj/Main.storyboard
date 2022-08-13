@@ -9,14 +9,6 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Deysiabrush-mLgWV.ttf">
-            <string>DeysiaBrush</string>
-        </array>
-        <array key="Lucy.ttf">
-            <string>LucySaidOkPersonalUse-Italic</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Home Page View Controller-->
         <scene sceneID="uUi-MT-FyN">
@@ -27,21 +19,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="v2p-ge-aRi">
-                                <rect key="frame" x="41.5" y="50" width="331" height="300"/>
+                                <rect key="frame" x="41.5" y="50" width="331" height="336"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSL-Mi-76X">
-                                        <rect key="frame" x="89" y="0.0" width="153" height="100"/>
+                                        <rect key="frame" x="95" y="0.0" width="141" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="VhQ-MX-Iik"/>
                                         </constraints>
                                         <string key="text">Welcome to 
 NeverForget</string>
-                                        <fontDescription key="fontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="40"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
                                         <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uf6-Qc-6b3">
-                                        <rect key="frame" x="127.5" y="156" width="76" height="38"/>
+                                        <rect key="frame" x="115.5" y="156" width="100.5" height="74"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="tintColor" systemColor="linkColor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -49,7 +41,7 @@ NeverForget</string>
                                             <color key="titleColor" systemColor="systemBlueColor"/>
                                         </state>
                                         <buttonConfiguration key="configuration" style="plain" title="Sign in" cornerStyle="medium">
-                                            <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="25"/>
+                                            <fontDescription key="titleFontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
                                             <color key="baseForegroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -57,7 +49,7 @@ NeverForget</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J45-pI-dWY">
-                                        <rect key="frame" x="55" y="250" width="221" height="50"/>
+                                        <rect key="frame" x="49" y="286" width="233" height="50"/>
                                         <color key="backgroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="3zX-4k-iey"/>
@@ -65,7 +57,7 @@ NeverForget</string>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Create an account" cornerStyle="capsule">
-                                            <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="35"/>
+                                            <fontDescription key="titleFontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
                                             <color key="baseForegroundColor" systemColor="systemGray6Color"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -105,56 +97,56 @@ NeverForget</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="wpM-GU-KgC">
-                                <rect key="frame" x="41.5" y="163" width="331" height="361"/>
+                                <rect key="frame" x="41.5" y="163" width="331" height="426"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gns-1V-j9h">
-                                        <rect key="frame" x="0.0" y="0.0" width="331" height="49"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="62"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="331" id="bUS-aH-M8f"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="40"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
                                         <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fQG-KY-bzs">
-                                        <rect key="frame" x="0.0" y="78" width="331" height="49"/>
+                                        <rect key="frame" x="0.0" y="91" width="331" height="62"/>
                                         <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="331" id="0uS-1q-CD0"/>
                                         </constraints>
                                         <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="23"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hNQ-h7-CNs">
-                                        <rect key="frame" x="0.0" y="156" width="331" height="49"/>
+                                        <rect key="frame" x="0.0" y="182" width="331" height="62"/>
                                         <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="331" id="5Qe-ku-KO9"/>
                                         </constraints>
                                         <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="23"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create password:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RTu-zJ-glP">
-                                        <rect key="frame" x="0.0" y="234" width="331" height="49"/>
+                                        <rect key="frame" x="0.0" y="273" width="331" height="62"/>
                                         <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="331" id="p1K-K1-9eo"/>
                                         </constraints>
                                         <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="23"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61S-Hg-zaY">
-                                        <rect key="frame" x="0.0" y="312" width="331" height="49"/>
+                                        <rect key="frame" x="0.0" y="364" width="331" height="62"/>
                                         <color key="backgroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="331" id="ClP-c0-3c6"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Sign Up">
-                                            <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="35"/>
+                                            <fontDescription key="titleFontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
                                             <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -221,14 +213,14 @@ NeverForget</string>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="smQ-Gj-Gxq">
                                                     <rect key="frame" x="85" y="7.5" width="28.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="0.0"/>
+                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="0.0"/>
                                                     <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DdH-Yo-zHI">
                                                     <rect key="frame" x="85" y="27" width="40.5" height="13.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="0.0"/>
+                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="0.0"/>
                                                     <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -294,14 +286,14 @@ NeverForget</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fNy-9m-gfN">
-                                <rect key="frame" x="30" y="108" width="354" height="774"/>
+                                <rect key="frame" x="30" y="108" width="354" height="784"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyl-uE-MsH">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="39"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="43"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Click to select return or pickup:">
-                                            <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="25"/>
+                                            <fontDescription key="titleFontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
                                             <color key="baseForegroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -310,40 +302,40 @@ NeverForget</string>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter store name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lJ8-BF-IQR">
-                                        <rect key="frame" x="0.0" y="59" width="354" height="37"/>
+                                        <rect key="frame" x="0.0" y="63" width="354" height="38.5"/>
                                         <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What you want to return/pickup?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oV4-py-5Mn">
-                                        <rect key="frame" x="0.0" y="116" width="354" height="37"/>
+                                        <rect key="frame" x="0.0" y="121.5" width="354" height="38.5"/>
                                         <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notes:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h1m-8q-Ah0">
-                                        <rect key="frame" x="0.0" y="173" width="354" height="37"/>
+                                        <rect key="frame" x="0.0" y="180" width="354" height="38.5"/>
                                         <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
                                     <datePicker contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="UlA-Ta-rgj">
-                                        <rect key="frame" x="0.0" y="230" width="354" height="366.5"/>
+                                        <rect key="frame" x="0.0" y="238.5" width="354" height="366.5"/>
                                         <connections>
                                             <action selector="DatepickerTapped:" destination="Prt-wU-K5e" eventType="valueChanged" id="KMA-XI-2or"/>
                                         </connections>
                                     </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2TX-zk-BPD">
-                                        <rect key="frame" x="0.0" y="616.5" width="354" height="41.5"/>
+                                        <rect key="frame" x="0.0" y="625" width="354" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="uhT-V3-u9u"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Update" buttonSize="medium">
-                                            <fontDescription key="titleFontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="25"/>
+                                            <fontDescription key="titleFontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
                                             <color key="baseForegroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -351,13 +343,13 @@ NeverForget</string>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="-100" translatesAutoresizingMaskIntoConstraints="NO" id="i6W-VL-shP">
-                                        <rect key="frame" x="0.0" y="678" width="354" height="96"/>
+                                        <rect key="frame" x="0.0" y="688" width="354" height="96"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5o-YN-7iD">
-                                                <rect key="frame" x="0.0" y="0.0" width="354" height="37"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="43"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Check Return Policy? -&gt;" titleAlignment="trailing">
-                                                    <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="23"/>
+                                                    <fontDescription key="titleFontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
                                                     <color key="baseForegroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -366,13 +358,13 @@ NeverForget</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sl8-JI-gow">
-                                                <rect key="frame" x="254" y="0.0" width="100" height="37"/>
+                                                <rect key="frame" x="254" y="0.0" width="100" height="44.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Jfi-bq-qS7"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Go!">
-                                                    <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="23"/>
+                                                    <fontDescription key="titleFontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="19"/>
                                                     <color key="baseForegroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -432,11 +424,11 @@ NeverForget</string>
                                 <rect key="frame" x="30" y="64" width="354" height="782"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGh-GO-4Ml">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="43"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="46.5"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Click to select return or pickup:">
-                                            <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="25"/>
+                                            <fontDescription key="titleFontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
                                             <color key="baseForegroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -444,42 +436,42 @@ NeverForget</string>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter store name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rx4-sz-JCy">
-                                        <rect key="frame" x="0.0" y="67" width="354" height="41"/>
+                                        <rect key="frame" x="0.0" y="70.5" width="354" height="42"/>
                                         <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <imageReference key="background" image="shopping2" symbolScale="default"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What you want to return/pickup?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hCc-Qb-oGs">
-                                        <rect key="frame" x="0.0" y="132" width="354" height="41"/>
+                                        <rect key="frame" x="0.0" y="136.5" width="354" height="41.5"/>
                                         <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notes:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WEa-p8-0dw">
-                                        <rect key="frame" x="0.0" y="197" width="354" height="41"/>
+                                        <rect key="frame" x="0.0" y="202" width="354" height="42"/>
                                         <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <datePicker contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="D8U-v0-hSQ">
-                                        <rect key="frame" x="0.0" y="262" width="354" height="400"/>
+                                        <rect key="frame" x="0.0" y="268" width="354" height="400"/>
                                         <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="400" id="zwk-Or-Lbm"/>
                                         </constraints>
                                     </datePicker>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="-80" translatesAutoresizingMaskIntoConstraints="NO" id="5XA-vv-sbK">
-                                        <rect key="frame" x="0.0" y="686" width="354" height="96"/>
+                                        <rect key="frame" x="0.0" y="692" width="354" height="90"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNp-1d-fzf">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="37"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="43"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Check Return Policy? -&gt;" titleAlignment="trailing">
-                                                    <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="23"/>
+                                                    <fontDescription key="titleFontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
                                                     <color key="baseForegroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -487,13 +479,13 @@ NeverForget</string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAr-PB-rn4">
-                                                <rect key="frame" x="294" y="0.0" width="60" height="37"/>
+                                                <rect key="frame" x="294" y="0.0" width="60" height="43"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="rgh-Cv-a0N"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Go!">
-                                                    <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="23"/>
+                                                    <fontDescription key="titleFontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
                                                     <color key="baseForegroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -539,33 +531,33 @@ NeverForget</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="0h2-eE-7ks">
-                                <rect key="frame" x="41.5" y="75" width="331" height="392"/>
+                                <rect key="frame" x="41.5" y="75" width="331" height="492"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1G-Gy-SN9">
-                                        <rect key="frame" x="0.0" y="0.0" width="331" height="40"/>
-                                        <fontDescription key="fontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="60"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
                                         <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0sN-Ls-aUv">
-                                        <rect key="frame" x="0.0" y="88" width="331" height="40"/>
+                                        <rect key="frame" x="0.0" y="108" width="331" height="60"/>
                                         <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="23"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rSC-UQ-Tcq">
-                                        <rect key="frame" x="0.0" y="176" width="331" height="40"/>
+                                        <rect key="frame" x="0.0" y="216" width="331" height="60"/>
                                         <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="23"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGY-0R-Qgb">
-                                        <rect key="frame" x="0.0" y="264" width="331" height="40"/>
+                                        <rect key="frame" x="0.0" y="324" width="331" height="60"/>
                                         <color key="backgroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Sign In" cornerStyle="capsule" titleAlignment="center">
-                                            <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="30"/>
+                                            <fontDescription key="titleFontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
                                             <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
                                             <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                         </buttonConfiguration>
@@ -574,9 +566,9 @@ NeverForget</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwd-cs-n7W">
-                                        <rect key="frame" x="0.0" y="352" width="331" height="40"/>
+                                        <rect key="frame" x="0.0" y="432" width="331" height="60"/>
                                         <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Forgot Password?"/>
                                         <connections>
@@ -654,28 +646,28 @@ NeverForget</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="1vA-A9-QyW">
-                                <rect key="frame" x="21.5" y="75" width="172.5" height="256"/>
+                                <rect key="frame" x="24" y="75" width="192" height="256"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tC-cQ-rAS">
-                                        <rect key="frame" x="0.0" y="0.0" width="172.5" height="48"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="192" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="G3w-2V-Vj5"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="35"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
                                         <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3jQ-TP-cgK">
-                                        <rect key="frame" x="0.0" y="104" width="172.5" height="48"/>
+                                        <rect key="frame" x="0.0" y="104" width="192" height="48"/>
                                         <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="23"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdb-BK-Kjg">
-                                        <rect key="frame" x="0.0" y="208" width="172.5" height="48"/>
+                                        <rect key="frame" x="0.0" y="208" width="192" height="48"/>
                                         <color key="backgroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="40"/>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Send"/>
                                         <connections>
@@ -747,23 +739,23 @@ NeverForget</string>
                         <color key="sectionIndexBackgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="nfn-np-EfN" detailTextLabel="lyc-YW-XsE" style="IBUITableViewCellStyleSubtitle" id="deg-Sv-Rgr">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="48.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="deg-Sv-Rgr" id="58v-eQ-BOo">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="48.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nfn-np-EfN">
-                                            <rect key="frame" x="20" y="5.5" width="16" height="14.5"/>
+                                            <rect key="frame" x="20" y="7" width="16" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="13"/>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="10"/>
                                             <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lyc-YW-XsE">
-                                            <rect key="frame" x="20" y="22.5" width="28" height="14.5"/>
+                                            <rect key="frame" x="20" y="25" width="28" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="13"/>
+                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="10"/>
                                             <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -803,7 +795,7 @@ NeverForget</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7Sz-D8-ryK"/>
+        <segue reference="QBu-H0-baS"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>

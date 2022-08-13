@@ -18,6 +18,7 @@ class EntryListViewController: UIViewController {
     @IBOutlet weak var table: UITableView!
     
     var reminders = [PickupReturnModel]()
+    var service = Service()
     override func viewDidLoad() {
         super.viewDidLoad()
         table.backgroundView = UIImageView(image: UIImage(named: "Lavender-Aesthetic-Wallpapers"))
@@ -26,52 +27,17 @@ class EntryListViewController: UIViewController {
         table.delegate = self
         table.dataSource = self
         readDate()
-        
-       // self.table.reloadData()
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        readDate()
-//        self.table.reloadData()
-//    }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        //self.viewDidLoad()
-//        self.table.reloadData()
-//    }
+
     func readDate() {
         let defaults = UserDefaults.standard
-        let service = Service()
+        //let service = Service()
         service.getUserInfo(onSuccess: {
-            var tmpPickup: [PickupReturnModel] = []
-            var tmpReturn: [PickupReturnModel] = []
-            for entry in service.entries{
-                print("@@@@@@@@@@@@@@@@@@@@@@@@@")
-                print(entry)
-                for key in entry.keys{
-                    let duedate = DateFormatter()
-                    duedate.dateFormat = "MM-dd-yyyy HH:mm"
-                    let dateStr = duedate.date(from: entry[key]!["duedate"]!)
-                    let new = PickupReturnModel(storeName: entry[key]!["storeName"]!, itemTitle: entry[key]!["item"], dueDate: dateStr!, notes: entry[key]!["notes"], options: entry[key]!["options"]!, timestamp: key)
-                    //self.reminders.append(new)
-                    if entry[key]!["options"] == "Pickup" {
-                        tmpPickup.append(new)
-                    } else if entry[key]!["options"] == "Return" {
-                        tmpReturn.append(new)
-                    }
-                }
-            }
-            
-            guard !tmpPickup.isEmpty || !tmpReturn.isEmpty else { return }
-                        
-            ReminderController.shared.Pickup = tmpPickup
-            ReminderController.shared.Return = tmpReturn
-            
-         
+            ReminderController.shared.Pickup = self.service.pickup_list
+            ReminderController.shared.Return = self.service.return_list
+
             self.table.reloadData()
-            self.WelcomeLabel.font = UIFont(name: "Lucy Said Ok Personal Use", size: 30)
+            self.WelcomeLabel.font = UIFont(name: "NoteWorthy", size: 20)
             //self.WelcomeLabel.textColor = UIColor(red: 126.0, green: 52.0, blue: 120.0, alpha: 1.0)
             self.WelcomeLabel.text = "Welcome \(defaults.string(forKey: "userNameKey")!)"
         }) { (error) in
@@ -86,7 +52,6 @@ class EntryListViewController: UIViewController {
             let defaults = UserDefaults.standard
             defaults.set(false, forKey: "isuserSignedin")
             self.dismiss(animated: true, completion: nil)
-            //exit(0)
         }catch let signOutError {
             self.present(Service.createAlertController(title: "Error", message: signOutError.localizedDescription), animated: true, completion: nil)
         }
@@ -105,8 +70,8 @@ class EntryListViewController: UIViewController {
         }
         navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
+
 extension EntryListViewController: UITableViewDelegate, UITableViewDataSource {
    
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -120,12 +85,11 @@ extension EntryListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let sectionCell = ReminderController.shared.sections[indexPath.section][indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.font = UIFont(name: "Deysia Brush", size: 15)
+        cell.textLabel?.font = UIFont(name: "NoteWorthy", size: 15)
         cell.textLabel?.text = sectionCell.storeName + " " + (sectionCell.itemTitle ?? "") + " " + sectionCell.notes!
     
         let date = sectionCell.dueDate
-        //print(reminders)
-        cell.detailTextLabel?.font = UIFont(name: "Deysia Brush", size: 15)
+        cell.detailTextLabel?.font = UIFont(name: "NoteWorthy", size: 15)
         cell.detailTextLabel?.text = "Due Date: " + Service.formattedDate(date: date)
 
         return cell
@@ -141,7 +105,7 @@ extension EntryListViewController: UITableViewDelegate, UITableViewDataSource {
             //header1.backgroundColor = UIColor.
             let sectionLabel1 = UILabel(frame: CGRect(x: 8, y: 28, width:
                                                         tableView.bounds.size.width, height: tableView.bounds.size.height))
-            sectionLabel1.font = UIFont(name: "Lucy Said Ok Personal Use", size: 20)
+            sectionLabel1.font = UIFont(name: "NoteWorthy", size: 15)
             
             sectionLabel1.textColor = UIColor.purple
             sectionLabel1.text = "Return"
@@ -154,7 +118,7 @@ extension EntryListViewController: UITableViewDelegate, UITableViewDataSource {
             //header2.backgroundColor = UIColor.systemCyan
             let sectionLabel2 = UILabel(frame: CGRect(x: 8, y: 28, width:
                                                         tableView.bounds.size.width, height: tableView.bounds.size.height))
-            sectionLabel2.font = UIFont(name: "Lucy Said Ok Personal Use", size: 20)
+            sectionLabel2.font = UIFont(name: "NoteWorthy", size: 15)
             sectionLabel2.textColor = UIColor.purple
             sectionLabel2.text = "Pickup"
             sectionLabel2.sizeToFit()
@@ -188,6 +152,5 @@ extension EntryListViewController: UITableViewDelegate, UITableViewDataSource {
             destination.entry = entry
         }
     }
-    
 }
 
