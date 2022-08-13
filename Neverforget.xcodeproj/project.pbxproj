@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8C28F48F2888C19F003889B3 /* NotificationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28F48E2888C19F003889B3 /* NotificationSettings.swift */; };
-		8C28F49228892BEA003889B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C28F49128892BEA003889B3 /* Assets.xcassets */; };
 		8C917A002884838B008F9FAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9179FF2884838B008F9FAB /* AppDelegate.swift */; };
 		8C917A022884838B008F9FAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C917A012884838B008F9FAB /* SceneDelegate.swift */; };
 		8C917A042884838B008F9FAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C917A032884838B008F9FAB /* ViewController.swift */; };
@@ -29,6 +28,7 @@
 		8C9305342895A4BE0015D467 /* StayolaHeartPersonalUseRegular-x3p60.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C9305332895A4BE0015D467 /* StayolaHeartPersonalUseRegular-x3p60.otf */; };
 		8C9305362895A4C80015D467 /* Deysiabrush-mLgWV.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C9305352895A4C80015D467 /* Deysiabrush-mLgWV.ttf */; };
 		8C9305382895A5520015D467 /* LoveMatch-x3jrr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C9305372895A5520015D467 /* LoveMatch-x3jrr.ttf */; };
+		8C974A7628A852B500ED3CEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C974A7528A852B500ED3CEC /* Assets.xcassets */; };
 		8C9B0846289373380089B443 /* ReturnPolicyWebsiteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9B0845289373380089B443 /* ReturnPolicyWebsiteController.swift */; };
 		8C9D1AE52886527700EF0A77 /* ReminderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D1AE42886527700EF0A77 /* ReminderController.swift */; };
 		8CA351C2288A4FB400A66653 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA351C1288A4FB400A66653 /* MapViewController.swift */; };
@@ -55,7 +55,6 @@
 		2E0F80B6EC612A129F4B22F9 /* Pods-Neverforget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neverforget.debug.xcconfig"; path = "Target Support Files/Pods-Neverforget/Pods-Neverforget.debug.xcconfig"; sourceTree = "<group>"; };
 		7841CEFA5406833D4EFEEEDC /* Pods_Neverforget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neverforget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C28F48E2888C19F003889B3 /* NotificationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettings.swift; sourceTree = "<group>"; };
-		8C28F49128892BEA003889B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
 		8C9179FC2884838B008F9FAB /* Neverforget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neverforget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C9179FF2884838B008F9FAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C917A012884838B008F9FAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		8C9305332895A4BE0015D467 /* StayolaHeartPersonalUseRegular-x3p60.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "StayolaHeartPersonalUseRegular-x3p60.otf"; sourceTree = "<group>"; };
 		8C9305352895A4C80015D467 /* Deysiabrush-mLgWV.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Deysiabrush-mLgWV.ttf"; sourceTree = "<group>"; };
 		8C9305372895A5520015D467 /* LoveMatch-x3jrr.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LoveMatch-x3jrr.ttf"; sourceTree = "<group>"; };
+		8C974A7528A852B500ED3CEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C9B0845289373380089B443 /* ReturnPolicyWebsiteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnPolicyWebsiteController.swift; sourceTree = "<group>"; };
 		8C9D1AE42886527700EF0A77 /* ReminderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderController.swift; sourceTree = "<group>"; };
 		8CA351C1288A4FB400A66653 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 				8C917A012884838B008F9FAB /* SceneDelegate.swift */,
 				8C917A032884838B008F9FAB /* ViewController.swift */,
 				8C917A052884838B008F9FAB /* Main.storyboard */,
-				8C28F49128892BEA003889B3 /* Assets.xcassets */,
+				8C974A7528A852B500ED3CEC /* Assets.xcassets */,
 				8C917A0A2884838C008F9FAB /* LaunchScreen.storyboard */,
 				8C917A0D2884838C008F9FAB /* Info.plist */,
 				8C917A1328848419008F9FAB /* GoogleService-Info.plist */,
@@ -285,9 +285,9 @@
 				8C917A0C2884838C008F9FAB /* LaunchScreen.storyboard in Resources */,
 				8C930530289599DB0015D467 /* Lucy.ttf in Resources */,
 				8C917A1428848419008F9FAB /* GoogleService-Info.plist in Resources */,
-				8C28F49228892BEA003889B3 /* Assets.xcassets in Resources */,
 				8C9305342895A4BE0015D467 /* StayolaHeartPersonalUseRegular-x3p60.otf in Resources */,
 				8C9305362895A4C80015D467 /* Deysiabrush-mLgWV.ttf in Resources */,
+				8C974A7628A852B500ED3CEC /* Assets.xcassets in Resources */,
 				8C917A072884838B008F9FAB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
