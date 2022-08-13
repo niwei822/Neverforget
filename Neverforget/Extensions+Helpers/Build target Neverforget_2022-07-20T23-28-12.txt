@@ -1,0 +1,4 @@
+
+Showing Recent Messages
+shell script build rule for '/Users/cecilyli/Desktop/Neverforget/Neverforget/Assets.xcassets' must declare at least one output file
+

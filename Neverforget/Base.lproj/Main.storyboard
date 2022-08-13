@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BOK-c4-Xs5">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Deysiabrush-mLgWV.ttf">
+            <string>DeysiaBrush</string>
+        </array>
+        <array key="Lucy.ttf">
+            <string>LucySaidOkPersonalUse-Italic</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Home Page View Controller-->
+        <scene sceneID="uUi-MT-FyN">
+            <objects>
+                <viewController id="HRt-TV-dxZ" customClass="HomePageViewController" customModule="Neverforget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vco-9I-pbk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="v2p-ge-aRi">
+                                <rect key="frame" x="41.5" y="50" width="331" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSL-Mi-76X">
+                                        <rect key="frame" x="89" y="0.0" width="153" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="VhQ-MX-Iik"/>
+                                        </constraints>
+                                        <string key="text">Welcome to 
+NeverForget</string>
+                                        <fontDescription key="fontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="40"/>
+                                        <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uf6-Qc-6b3">
+                                        <rect key="frame" x="127.5" y="156" width="76" height="38"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="tintColor" systemColor="linkColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Sign in">
+                                            <color key="titleColor" systemColor="systemBlueColor"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="plain" title="Sign in" cornerStyle="medium">
+                                            <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="25"/>
+                                            <color key="baseForegroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="SignInButtonTapped:" destination="HRt-TV-dxZ" eventType="touchUpInside" id="dPl-Bn-ye8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J45-pI-dWY">
+                                        <rect key="frame" x="55" y="250" width="221" height="50"/>
+                                        <color key="backgroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="3zX-4k-iey"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="221" id="rp1-Np-FZN"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Create an account" cornerStyle="capsule">
+                                            <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="35"/>
+                                            <color key="baseForegroundColor" systemColor="systemGray6Color"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="SignUpButtonTapped:" destination="HRt-TV-dxZ" eventType="touchUpInside" id="8Ps-tg-JIi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="A8e-mt-LV5"/>
+                        <color key="backgroundColor" red="0.93238500715947847" green="0.96043411726804129" blue="0.95337105842606484" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="v2p-ge-aRi" firstAttribute="top" secondItem="A8e-mt-LV5" secondAttribute="top" constant="50" id="UJt-Ex-NRy"/>
+                            <constraint firstItem="v2p-ge-aRi" firstAttribute="centerX" secondItem="A8e-mt-LV5" secondAttribute="centerX" id="fQ9-rk-7Vw"/>
+                            <constraint firstItem="v2p-ge-aRi" firstAttribute="width" secondItem="Vco-9I-pbk" secondAttribute="width" multiplier="0.8" id="kMG-I4-9mp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jga-HJ-51A"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="SignInButton" destination="Uf6-Qc-6b3" id="dyW-g1-Inp"/>
+                        <outlet property="SignUpButton" destination="J45-pI-dWY" id="4Wb-DK-u3y"/>
+                        <segue destination="GGI-Fa-ZH8" kind="show" identifier="signUpsegue" id="4rS-Ml-fQU"/>
+                        <segue destination="sZJ-qk-7Xu" kind="show" identifier="signInsegue" id="DSN-ez-SRK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="75o-pz-iHu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3515.9420289855075" y="-235.04464285714283"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="1LD-TU-byb">
+            <objects>
+                <viewController id="GGI-Fa-ZH8" customClass="SignUpViewController" customModule="Neverforget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gmx-HK-gA7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="wpM-GU-KgC">
+                                <rect key="frame" x="41.5" y="163" width="331" height="361"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gns-1V-j9h">
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="49"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="331" id="bUS-aH-M8f"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="40"/>
+                                        <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fQG-KY-bzs">
+                                        <rect key="frame" x="0.0" y="78" width="331" height="49"/>
+                                        <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="331" id="0uS-1q-CD0"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="23"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hNQ-h7-CNs">
+                                        <rect key="frame" x="0.0" y="156" width="331" height="49"/>
+                                        <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="331" id="5Qe-ku-KO9"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="23"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create password:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RTu-zJ-glP">
+                                        <rect key="frame" x="0.0" y="234" width="331" height="49"/>
+                                        <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="331" id="p1K-K1-9eo"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="23"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61S-Hg-zaY">
+                                        <rect key="frame" x="0.0" y="312" width="331" height="49"/>
+                                        <color key="backgroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="331" id="ClP-c0-3c6"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Sign Up">
+                                            <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="35"/>
+                                            <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="signUpButtonTapped:" destination="GGI-Fa-ZH8" eventType="touchUpInside" id="IvS-g0-b6B"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="331" id="p6z-iB-xD6"/>
+                                    <constraint firstAttribute="height" constant="432" id="swN-NN-xBF"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3Na-rm-84g"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wpM-GU-KgC" firstAttribute="top" secondItem="3Na-rm-84g" secondAttribute="top" constant="75" id="6PD-Pm-9J9"/>
+                            <constraint firstItem="3Na-rm-84g" firstAttribute="bottom" secondItem="wpM-GU-KgC" secondAttribute="bottom" constant="323" id="Spw-MV-XfE"/>
+                            <constraint firstItem="wpM-GU-KgC" firstAttribute="width" secondItem="3Na-rm-84g" secondAttribute="width" multiplier="0.8" id="fw5-wn-Koy"/>
+                            <constraint firstItem="wpM-GU-KgC" firstAttribute="centerX" secondItem="3Na-rm-84g" secondAttribute="centerX" id="hhW-1Q-CvZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YoG-Rt-G5v"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="signEmailField" destination="hNQ-h7-CNs" id="9db-VD-1x3"/>
+                        <outlet property="signPasswordField" destination="RTu-zJ-glP" id="dmw-gd-CE3"/>
+                        <outlet property="signUpButton" destination="61S-Hg-zaY" id="jed-jy-mhz"/>
+                        <outlet property="userNameField" destination="fQG-KY-bzs" id="S2J-cM-QfQ"/>
+                        <segue destination="MWL-UQ-3xE" kind="show" identifier="userSignedupsegue" id="7Sz-D8-ryK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yGR-qU-ROY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2739.130434782609" y="113.83928571428571"/>
+        </scene>
+        <!--Entry List View Controller-->
+        <scene sceneID="z7h-1W-1iv">
+            <objects>
+                <viewController id="wqY-fN-ib3" customClass="EntryListViewController" customModule="Neverforget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dsY-5M-ZBu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dlz-f9-abU">
+                                <rect key="frame" x="57" y="88" width="300" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" systemColor="systemPurpleColor"/>
+                                <color key="highlightedColor" name="AccentColor"/>
+                                <color key="shadowColor" name="AccentColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HB9-7y-KDx">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" red="0.82745099070000006" green="0.78823530669999997" blue="0.9098039269" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="smQ-Gj-Gxq" detailTextLabel="DdH-Yo-zHI" imageView="rD5-Ek-7gA" style="IBUITableViewCellStyleSubtitle" id="w44-Yh-Dbc">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="49.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w44-Yh-Dbc" id="sTP-BZ-XTe">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="smQ-Gj-Gxq">
+                                                    <rect key="frame" x="85" y="7.5" width="28.5" height="17"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="0.0"/>
+                                                    <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DdH-Yo-zHI">
+                                                    <rect key="frame" x="85" y="27" width="40.5" height="13.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="0.0"/>
+                                                    <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="shopping-bags_1f6cd-fe0f" adjustsImageSizeForAccessibilityContentSizeCategory="YES" id="rD5-Ek-7gA">
+                                                    <rect key="frame" x="20" y="0.0" width="50" height="49.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.89803922179999995" green="0.85098040100000005" blue="0.98039215800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="tintColor" red="0.82745099070000006" green="0.78823530669999997" blue="0.9098039269" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Prt-wU-K5e" kind="show" identifier="showEntryDetail" id="Xv5-aj-jNv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CXK-yx-ct3"/>
+                        <color key="backgroundColor" red="0.89803922179999995" green="0.85098040100000005" blue="0.98039215800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CXK-yx-ct3" firstAttribute="bottom" secondItem="HB9-7y-KDx" secondAttribute="bottom" id="9SF-za-nul"/>
+                            <constraint firstItem="Dlz-f9-abU" firstAttribute="leading" secondItem="CXK-yx-ct3" secondAttribute="leading" constant="57" id="PcQ-S3-7b5"/>
+                            <constraint firstItem="HB9-7y-KDx" firstAttribute="top" secondItem="Dlz-f9-abU" secondAttribute="bottom" id="bvq-L4-eLK"/>
+                            <constraint firstItem="CXK-yx-ct3" firstAttribute="trailing" secondItem="HB9-7y-KDx" secondAttribute="trailing" id="cZG-lV-sWd"/>
+                            <constraint firstItem="HB9-7y-KDx" firstAttribute="leading" secondItem="CXK-yx-ct3" secondAttribute="leading" id="p5z-dZ-kuH"/>
+                            <constraint firstItem="Dlz-f9-abU" firstAttribute="top" secondItem="CXK-yx-ct3" secondAttribute="top" id="pJA-ND-BGg"/>
+                            <constraint firstItem="CXK-yx-ct3" firstAttribute="trailing" secondItem="Dlz-f9-abU" secondAttribute="trailing" constant="57" id="ryI-8d-SPr"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="j3S-Tn-69J">
+                        <barButtonItem key="leftBarButtonItem" title="Log out" id="HLK-YW-Sr1">
+                            <color key="tintColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="LogoutButtonTapped:" destination="wqY-fN-ib3" id="BwX-ZM-0mR"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tNa-96-9Je">
+                            <color key="tintColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="didTapAdd:" destination="wqY-fN-ib3" id="LXW-xV-kf5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="WelcomeLabel" destination="Dlz-f9-abU" id="eqg-Rw-zBz"/>
+                        <outlet property="table" destination="HB9-7y-KDx" id="zeq-1e-SfG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzZ-Af-Kxb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-771.01449275362324" y="-84.375"/>
+        </scene>
+        <!--Entry Detail View Controller-->
+        <scene sceneID="pjE-Zr-u27">
+            <objects>
+                <viewController id="Prt-wU-K5e" customClass="EntryDetailViewController" customModule="Neverforget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nZK-ql-9tg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fNy-9m-gfN">
+                                <rect key="frame" x="30" y="108" width="354" height="774"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyl-uE-MsH">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="39"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Click to select return or pickup:">
+                                            <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="25"/>
+                                            <color key="baseForegroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="optionButtonTapped:" destination="Prt-wU-K5e" eventType="touchUpInside" id="FnV-Fw-IOq"/>
+                                            <action selector="optionButtonTapped:" destination="XoE-pT-9sy" eventType="touchUpInside" id="omZ-Xi-4k0"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter store name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lJ8-BF-IQR">
+                                        <rect key="frame" x="0.0" y="59" width="354" height="37"/>
+                                        <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What you want to return/pickup?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oV4-py-5Mn">
+                                        <rect key="frame" x="0.0" y="116" width="354" height="37"/>
+                                        <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notes:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h1m-8q-Ah0">
+                                        <rect key="frame" x="0.0" y="173" width="354" height="37"/>
+                                        <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textField>
+                                    <datePicker contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="UlA-Ta-rgj">
+                                        <rect key="frame" x="0.0" y="230" width="354" height="366.5"/>
+                                        <connections>
+                                            <action selector="DatepickerTapped:" destination="Prt-wU-K5e" eventType="valueChanged" id="KMA-XI-2or"/>
+                                        </connections>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2TX-zk-BPD">
+                                        <rect key="frame" x="0.0" y="616.5" width="354" height="41.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="uhT-V3-u9u"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Update" buttonSize="medium">
+                                            <fontDescription key="titleFontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="25"/>
+                                            <color key="baseForegroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="UpdateButtonTapped:" destination="Prt-wU-K5e" eventType="touchUpInside" id="PQM-Ge-iUF"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="-100" translatesAutoresizingMaskIntoConstraints="NO" id="i6W-VL-shP">
+                                        <rect key="frame" x="0.0" y="678" width="354" height="96"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5o-YN-7iD">
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="37"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Check Return Policy? -&gt;" titleAlignment="trailing">
+                                                    <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="23"/>
+                                                    <color key="baseForegroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="checkPolicyButton:" destination="XoE-pT-9sy" eventType="touchUpInside" id="J3f-gE-lca"/>
+                                                    <action selector="checkPolicyButton:" destination="Prt-wU-K5e" eventType="touchUpInside" id="Yjx-B8-cnn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sl8-JI-gow">
+                                                <rect key="frame" x="254" y="0.0" width="100" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Jfi-bq-qS7"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Go!">
+                                                    <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="23"/>
+                                                    <color key="baseForegroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="checkButtonTapped:" destination="Prt-wU-K5e" eventType="touchUpInside" id="8HQ-BU-l9o"/>
+                                                    <action selector="checkButtonTapped:" destination="XoE-pT-9sy" eventType="touchUpInside" id="Biz-aS-lfs"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="96" id="k5G-R0-AnH"/>
+                                            <constraint firstAttribute="trailing" secondItem="q5o-YN-7iD" secondAttribute="trailing" id="nKt-tj-faQ"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="tin-Nb-Wao"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HPD-VQ-y13"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fNy-9m-gfN" firstAttribute="top" secondItem="HPD-VQ-y13" secondAttribute="top" constant="20" id="2AD-37-z4g"/>
+                            <constraint firstItem="fNy-9m-gfN" firstAttribute="centerX" secondItem="nZK-ql-9tg" secondAttribute="centerX" id="CQX-RN-433"/>
+                            <constraint firstItem="fNy-9m-gfN" firstAttribute="leading" secondItem="HPD-VQ-y13" secondAttribute="leading" constant="30" id="hYZ-6f-c0v"/>
+                            <constraint firstItem="fNy-9m-gfN" firstAttribute="centerX" secondItem="HPD-VQ-y13" secondAttribute="centerX" id="rYS-t5-hRS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pAW-fj-wSu">
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="HAi-5I-5gf">
+                            <imageReference key="image" image="map" catalog="system" symbolScale="default"/>
+                            <color key="tintColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <segue destination="M9z-lb-4Wn" kind="presentation" identifier="showMap" modalPresentationStyle="automatic" id="noY-6S-iVZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="OptionButton" destination="xyl-uE-MsH" id="FG6-0I-iqI"/>
+                        <outlet property="datePicker" destination="UlA-Ta-rgj" id="cEM-0w-tGR"/>
+                        <outlet property="itemDetailField" destination="oV4-py-5Mn" id="Dj1-1H-cTv"/>
+                        <outlet property="notesField" destination="h1m-8q-Ah0" id="2qV-sq-6Yx"/>
+                        <outlet property="storeField" destination="lJ8-BF-IQR" id="e36-uR-wlD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1yP-1J-svO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73.913043478260875" y="-744.64285714285711"/>
+        </scene>
+        <!--Addentry View Controller-->
+        <scene sceneID="QWr-jl-59N">
+            <objects>
+                <viewController storyboardIdentifier="add" id="XoE-pT-9sy" customClass="AddentryViewController" customModule="Neverforget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3zd-Yc-sJd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="uUo-Q5-O8P">
+                                <rect key="frame" x="30" y="64" width="354" height="782"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGh-GO-4Ml">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="43"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Click to select return or pickup:">
+                                            <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="25"/>
+                                            <color key="baseForegroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="optionButtonTapped:" destination="XoE-pT-9sy" eventType="touchUpInside" id="5Hw-S7-USI"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter store name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rx4-sz-JCy">
+                                        <rect key="frame" x="0.0" y="67" width="354" height="41"/>
+                                        <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <imageReference key="background" image="shopping2" symbolScale="default"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What you want to return/pickup?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hCc-Qb-oGs">
+                                        <rect key="frame" x="0.0" y="132" width="354" height="41"/>
+                                        <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notes:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WEa-p8-0dw">
+                                        <rect key="frame" x="0.0" y="197" width="354" height="41"/>
+                                        <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <datePicker contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="D8U-v0-hSQ">
+                                        <rect key="frame" x="0.0" y="262" width="354" height="400"/>
+                                        <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="400" id="zwk-Or-Lbm"/>
+                                        </constraints>
+                                    </datePicker>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="-80" translatesAutoresizingMaskIntoConstraints="NO" id="5XA-vv-sbK">
+                                        <rect key="frame" x="0.0" y="686" width="354" height="96"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNp-1d-fzf">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="37"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Check Return Policy? -&gt;" titleAlignment="trailing">
+                                                    <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="23"/>
+                                                    <color key="baseForegroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="checkPolicyButton:" destination="XoE-pT-9sy" eventType="touchUpInside" id="ebh-RT-adf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAr-PB-rn4">
+                                                <rect key="frame" x="294" y="0.0" width="60" height="37"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="rgh-Cv-a0N"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Go!">
+                                                    <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="23"/>
+                                                    <color key="baseForegroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="checkButtonTapped:" destination="XoE-pT-9sy" eventType="touchUpInside" id="78t-DO-ir7"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5XA-vv-sbK" firstAttribute="leading" secondItem="D8U-v0-hSQ" secondAttribute="trailing" constant="-354" id="MmB-nA-Y8I"/>
+                                    <constraint firstItem="5XA-vv-sbK" firstAttribute="centerX" secondItem="D8U-v0-hSQ" secondAttribute="centerX" id="X7y-yz-oP3"/>
+                                    <constraint firstItem="5XA-vv-sbK" firstAttribute="width" secondItem="D8U-v0-hSQ" secondAttribute="width" id="aOU-Zq-KA6"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JJb-s0-uKR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uUo-Q5-O8P" firstAttribute="top" secondItem="JJb-s0-uKR" secondAttribute="top" constant="20" id="4C9-XK-9EC"/>
+                            <constraint firstItem="uUo-Q5-O8P" firstAttribute="leading" secondItem="JJb-s0-uKR" secondAttribute="leading" constant="30" id="E8f-mO-dqp"/>
+                            <constraint firstItem="uUo-Q5-O8P" firstAttribute="centerX" secondItem="JJb-s0-uKR" secondAttribute="centerX" id="N9c-5b-PKy"/>
+                            <constraint firstAttribute="bottom" secondItem="uUo-Q5-O8P" secondAttribute="bottom" constant="50" id="Vtw-1K-Ai7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="D8U-v0-hSQ" id="652-FX-2e8"/>
+                        <outlet property="itemDetailField" destination="hCc-Qb-oGs" id="ymz-be-Ybm"/>
+                        <outlet property="notesField" destination="WEa-p8-0dw" id="g8k-LA-tRb"/>
+                        <outlet property="storeField" destination="rx4-sz-JCy" id="UL1-qT-fhK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WVN-bL-4nx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60.869565217391312" y="-84.375"/>
+        </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="JJt-RF-ct2">
+            <objects>
+                <viewController id="sZJ-qk-7Xu" customClass="SignInViewController" customModule="Neverforget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lmf-or-Vhy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="0h2-eE-7ks">
+                                <rect key="frame" x="41.5" y="75" width="331" height="392"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1G-Gy-SN9">
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="40"/>
+                                        <fontDescription key="fontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="40"/>
+                                        <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0sN-Ls-aUv">
+                                        <rect key="frame" x="0.0" y="88" width="331" height="40"/>
+                                        <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="23"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rSC-UQ-Tcq">
+                                        <rect key="frame" x="0.0" y="176" width="331" height="40"/>
+                                        <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="23"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGY-0R-Qgb">
+                                        <rect key="frame" x="0.0" y="264" width="331" height="40"/>
+                                        <color key="backgroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Sign In" cornerStyle="capsule" titleAlignment="center">
+                                            <fontDescription key="titleFontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="30"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                            <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="signInButtonTapped:" destination="sZJ-qk-7Xu" eventType="touchUpInside" id="qiE-Zs-FvT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwd-cs-n7W">
+                                        <rect key="frame" x="0.0" y="352" width="331" height="40"/>
+                                        <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="25"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Forgot Password?"/>
+                                        <connections>
+                                            <action selector="forgotPWButtonTapped:" destination="sZJ-qk-7Xu" eventType="touchUpInside" id="tRt-i2-kvE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wwW-6n-JzV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0h2-eE-7ks" firstAttribute="top" secondItem="wwW-6n-JzV" secondAttribute="top" constant="75" id="b7n-7s-y4c"/>
+                            <constraint firstItem="0h2-eE-7ks" firstAttribute="centerX" secondItem="wwW-6n-JzV" secondAttribute="centerX" id="j8i-C9-HlW"/>
+                            <constraint firstItem="0h2-eE-7ks" firstAttribute="width" secondItem="wwW-6n-JzV" secondAttribute="width" multiplier="0.8" id="mwy-8b-l7y"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="N1k-cu-5ah"/>
+                    <connections>
+                        <outlet property="ForgotPWButton" destination="dwd-cs-n7W" id="QdP-Vx-yZj"/>
+                        <outlet property="emailField" destination="0sN-Ls-aUv" id="Gi8-Qw-wV1"/>
+                        <outlet property="passwordField" destination="rSC-UQ-Tcq" id="LwH-g5-6Ug"/>
+                        <outlet property="signInButton" destination="zGY-0R-Qgb" id="V3Q-bg-nnn"/>
+                        <segue destination="MWL-UQ-3xE" kind="show" identifier="userSignedInsegue" id="QBu-H0-baS"/>
+                        <segue destination="1U2-Vc-wdz" kind="show" identifier="forgotPWsegue" id="q0R-mk-OxQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Bz-Vo-bNO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2768.1159420289855" y="-645.53571428571422"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="A0q-0r-5nM">
+            <objects>
+                <navigationController storyboardIdentifier="welcomeViewID" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="MWL-UQ-3xE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Kqe-IC-f5y"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZGF-IS-sYG">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wqY-fN-ib3" kind="relationship" relationship="rootViewController" id="7b9-mW-Ttl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yer-Yc-WHB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1681.1594202898552" y="-84.375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jlX-zC-4Ot">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BOK-c4-Xs5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XPy-nh-M8q">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HRt-TV-dxZ" kind="relationship" relationship="rootViewController" id="G2c-KX-qbp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pz6-NS-hWr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4426.0869565217399" y="-235.04464285714283"/>
+        </scene>
+        <!--ForgotPW View Controller-->
+        <scene sceneID="F2I-fL-bNe">
+            <objects>
+                <viewController id="1U2-Vc-wdz" customClass="ForgotPWViewController" customModule="Neverforget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OhE-I9-kdW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="1vA-A9-QyW">
+                                <rect key="frame" x="21.5" y="75" width="172.5" height="256"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tC-cQ-rAS">
+                                        <rect key="frame" x="0.0" y="0.0" width="172.5" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="G3w-2V-Vj5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="35"/>
+                                        <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3jQ-TP-cgK">
+                                        <rect key="frame" x="0.0" y="104" width="172.5" height="48"/>
+                                        <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="23"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdb-BK-Kjg">
+                                        <rect key="frame" x="0.0" y="208" width="172.5" height="48"/>
+                                        <color key="backgroundColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="LucySaidOkPersonalUse-Italic" family="Lucy Said Ok Personal Use" pointSize="40"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="forgotPWButtonTapped:" destination="1U2-Vc-wdz" eventType="touchUpInside" id="2EZ-1h-3pp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="340" id="cO0-Sb-K6O"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EtL-0B-3H1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1vA-A9-QyW" firstAttribute="top" secondItem="EtL-0B-3H1" secondAttribute="top" constant="75" id="CbQ-YE-pw5"/>
+                            <constraint firstItem="1vA-A9-QyW" firstAttribute="centerX" secondItem="EtL-0B-3H1" secondAttribute="centerX" id="EhH-WP-gJf"/>
+                            <constraint firstItem="1vA-A9-QyW" firstAttribute="width" secondItem="EtL-0B-3H1" secondAttribute="width" multiplier="0.8" id="s7e-xt-Br3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Hsr-QT-g4g"/>
+                    <connections>
+                        <outlet property="SendButton" destination="hdb-BK-Kjg" id="zgV-sD-VNo"/>
+                        <outlet property="emailField" destination="3jQ-TP-cgK" id="bQn-bn-gSz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Kp-Ad-bjU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2768" y="-1327"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="sIO-BV-flb">
+            <objects>
+                <viewController id="p4z-QL-uuh" customClass="MapViewController" customModule="Neverforget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hfh-XC-ZTL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0eM-EG-iu4">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Enn-3h-l5j"/>
+                        <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="0eM-EG-iu4" firstAttribute="leading" secondItem="Enn-3h-l5j" secondAttribute="leading" id="4ny-8X-TgC"/>
+                            <constraint firstItem="0eM-EG-iu4" firstAttribute="top" secondItem="hfh-XC-ZTL" secondAttribute="top" id="Rij-4P-d4j"/>
+                            <constraint firstItem="0eM-EG-iu4" firstAttribute="centerX" secondItem="hfh-XC-ZTL" secondAttribute="centerX" id="psd-AP-zY8"/>
+                            <constraint firstItem="Enn-3h-l5j" firstAttribute="bottom" secondItem="0eM-EG-iu4" secondAttribute="bottom" id="v3T-GF-Vdx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="h9B-iv-psG"/>
+                    <connections>
+                        <outlet property="map" destination="0eM-EG-iu4" id="Kj3-oa-rkX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qyq-85-n11" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2144.927536231884" y="-745.3125"/>
+        </scene>
+        <!--Location Search Table View Controller-->
+        <scene sceneID="1AJ-CI-S6y">
+            <objects>
+                <tableViewController storyboardIdentifier="LocationSearchTable" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rm0-xh-7WX" customClass="LocationSearchTableViewController" customModule="Neverforget" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Sjq-Rf-kvN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="nfn-np-EfN" detailTextLabel="lyc-YW-XsE" style="IBUITableViewCellStyleSubtitle" id="deg-Sv-Rgr">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="deg-Sv-Rgr" id="58v-eQ-BOo">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nfn-np-EfN">
+                                            <rect key="frame" x="20" y="5.5" width="16" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="13"/>
+                                            <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lyc-YW-XsE">
+                                            <rect key="frame" x="20" y="22.5" width="28" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="DeysiaBrush" family="Deysia Brush" pointSize="13"/>
+                                            <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rm0-xh-7WX" id="Ndc-sR-Wnt"/>
+                            <outlet property="delegate" destination="rm0-xh-7WX" id="Z63-Rk-f5k"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RAH-mc-9qz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1335" y="-1434"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cpL-np-DQ9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M9z-lb-4Wn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="4yv-na-P1B"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WRK-3W-yGb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="p4z-QL-uuh" kind="relationship" relationship="rootViewController" id="8Uf-FP-sf5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rac-Lg-r4x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1126" y="-745"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7Sz-D8-ryK"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+    <resources>
+        <image name="map" catalog="system" width="128" height="110"/>
+        <image name="shopping-bags_1f6cd-fe0f" width="160" height="160"/>
+        <image name="shopping2" width="6340" height="4122"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
