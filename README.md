@@ -13,12 +13,15 @@ Neverforget is an APP that the user can register an account, then login to the A
 - UIApplication
 - UserNotifications
 - Cocoapods
-
-## Dependencies
 - Firebase Auth
 - Firebase Realtime database
 - DropDown
 - Mapkit
+
+## Features
+User can Sign Up an account and Sign In to the dashboard, user is able to reset the password if can't remember the password. This is realized by using Firebase Auth API. After the user signed up an account, it will save the user's name and email to Firebase Realtime Database to create an entry for the user.
+
+![SignIn SignUp](/Neverforget/sc/signup.gif)
 
 ## New Feature to be added
 - Allow user upload profile picture
