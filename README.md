@@ -38,7 +38,7 @@ On the dashboard, the user can swipe on an entry to delete it, as well as its re
 
 ![Delete entry](/Neverforget/sc/deleteentry.gif)
 
-By choosing the store name from the drop-down list, users can view the store's return policy on creating a new entry or entry detail page. 
+By choosing the store name from the drop-down list, UIApplication calls the open method with a store's return policy URL. The user can then view the return policy on creating a new entry or entry detail page. 
 
 ![Return Policy](/Neverforget/sc/checkreturnpolicy.gif)
 
