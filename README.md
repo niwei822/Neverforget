@@ -7,7 +7,7 @@ As a customer who enjoys shopping, I sometimes forget to pickup the order and re
 ## Summary
 Neverforget is an APP that the user is able to register an account, then login to the APP. In the dashboard it will list all the return and pickup records that the user has been added. User can tap on the record to show the details of the record and modify the record if needed. User is also able to add new pickup or return record and choose the time that wants to be reminded. By swipping on the record the user is able to delete the record. User is able to check the stores' return policy by selecting the store from the drop down list. User is able to search the nearby store to get the location of the store before heading to the store to pickup or return the order.
 
-## Tech stack
+## Tech Stack
 - Xcode
 - Swift
 - UIKit
@@ -20,3 +20,11 @@ Neverforget is an APP that the user is able to register an account, then login t
 - Firebase Realtime database
 - DropDown
 - Mapkit
+
+## New Feature to be added
+- Send SMS notifications to the user's phone
+- Allow user upload profile picture
+- Allow user upload pickup/return product's photo
+- Auto select the pick/return due date based on different store's return policy
+- Add the function to show the completed pickup/return
+- Allow user select notification frequency (Hourly, Daily, Weekly, etc.)
