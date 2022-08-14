@@ -24,7 +24,7 @@ User can Sign Up an account and Sign In to the dashboard, user is able to reset 
 
 ![SignUp](/Neverforget/sc/signup.gif)
 
-![SignIn](/Neverforget/sc/pwandsignin.gif)
+![SignIn](/Neverforget/sc/forgotpwsignin.gif)
 
 After user signed in, it will be redirected to the dashboard where you can see the list of added pickup/return entries divided by sections. User is also able to add new entry by click on the + icon. UserNotifications is used to setup the user reminder notifications. New pickup/return entry is saved to Firebase Realtime Database using Firebase Realtime Database. Each pickup/return entry is saved under the specific user's entry with timestamp as unique identification.
 
@@ -44,7 +44,7 @@ On add new entry or entry detail page, user can check store's return policy by c
 
 By tapping on the map icon, user is able to search the nearby store locations and show them on the map. This is done by using the MapKit.
 
-![Map](/Neverforget/sc/map.gif)
+![Map](/Neverforget/sc/openmap.gif)
 
 ## New Feature to be added
 - Allow user upload profile picture
