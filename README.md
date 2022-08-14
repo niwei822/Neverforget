@@ -20,34 +20,34 @@ Neverforget is an APP that the user can register an account, then login to the A
 - Mapkit
 
 ## Features
-User can Sign Up an account and Sign In to the dashboard, user is able to reset the password if can't remember the password. This is realized by using Firebase Auth API. After the user signed up an account, it will save the user's name and email to Firebase Realtime Database to create an entry for the user.
+The user can Sign Up for an account and Sign In to the dashboard, and if the password is forgotten, the user can reset it. This is accomplished by using the Firebase Auth API. After the user signs up for an account, Firebase Realtime Database will store the user's name and email to create an account entry.
 
 ![SignUp](/Neverforget/sc/signup.gif)
 
 ![SignIn](/Neverforget/sc/forgotpwsignin.gif)
 
-After user signed in, it will be redirected to the dashboard where you can see the list of added pickup/return entries divided by sections. User is also able to add new entry by click on the + icon. UserNotifications is used to setup the user reminder notifications. New pickup/return entry is saved to Firebase Realtime Database using Firebase Realtime Database. Each pickup/return entry is saved under the specific user's entry with timestamp as unique identification.
+After the user signs in, he or she will be taken to the dashboard, where you can see the list of added pickup/return entries divided by sections. The user is also able to add a new entry by clicking on the + icon. UserNotifications are used for setting up reminders. Firebase Realtime Database saves pickup/return entries. Each pickup/return entry is stored under the specific user's access with a timestamp as unique identification.
 
 ![Add entry and notification](/Neverforget/sc/addentryandnoti.gif)
 
-By tap on each pickup/return entry user is able to see the detailed information. User is able to modify all the information for the entry. Reminder notification is updated, other information are updated to Firebase Realtime Database by looking up the timestamp for that specific entry.
+By tapping on each pickup/return entry, the user is able to see the detailed information. The user has the option of editing all information for the entry. Reminder notifications and other information are updated to Firebase Realtime Database by looking up the timestamp for that specific entry.
 
 ![Update entry](/Neverforget/sc/updateentry.gif)
 
-On the dashboard user can swipe on an entry to delete an entry and it's reminder notification. The entry is deleted from Firebase Realtime Database by deleting the node.
+On the dashboard, the user can swipe on an entry to delete it, as well as its reminder notification. The entry is removed from Firebase Realtime Database by deleting the node.
 
 ![Delete entry](/Neverforget/sc/deleteentry.gif)
 
-On add new entry or entry detail page, user can check store's return policy by choosing the store name from the drop down list. 
+By choosing the store name from the drop-down list, users can view the store's return policy on creating a new entry or entry detail page. 
 
 ![Return Policy](/Neverforget/sc/checkreturnpolicy.gif)
 
-By tapping on the map icon, user is able to search the nearby store locations and show them on the map. This is done by using the MapKit.
+When the user taps on the map icon, nearby store locations are displayed on the map. Using MapKit, this is accomplished.
 
 ![Map](/Neverforget/sc/openmap.gif)
 
 ## New Feature to be added
-- Allow user upload profile picture
+- Allow user to upload a profile picture
 - Auto select the pick/return due date based on different store's return policy
 - Add the function to show the completed pickup/return
 - Allow user select notification frequency (Hourly, Daily, Weekly, etc.)
