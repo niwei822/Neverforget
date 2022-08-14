@@ -30,7 +30,7 @@ After the user signs in, he or she will be taken to the dashboard, where you can
 
 ![Add entry and notification](/Neverforget/sc/addentryandnoti.gif)
 
-By tapping on each pickup/return entry, the user is able to see the detailed information. The user has the option of editing all information for the entry. Reminder notifications and other information are updated to Firebase Realtime Database by looking up the timestamp for that specific entry.
+By tapping on each pickup/return entry, the user is able to see the detailed information. The user has the option of editing all information for the entry. The previous Reminder is deleted while an updated notification is created. Other information are updated to Firebase Realtime Database by looking up the timestamp for that specific entry.
 
 ![Update entry](/Neverforget/sc/updateentry.gif)
 
