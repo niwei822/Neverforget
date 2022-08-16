@@ -42,7 +42,7 @@ By choosing the store name from the drop-down list, UIApplication calls the open
 
 ![Return Policy](/Neverforget/sc/checkreturnpolicy.gif)
 
-When the user taps on the map icon, nearby store locations are displayed on the map. Using MapKit, this is accomplished.
+Using MapKit With CoreLocation,if the user searches for a particular store and selects any result, a pin is dropped on the map to indicate the address.
 
 ![Map](/Neverforget/sc/openmap.gif)
 
