@@ -61,7 +61,7 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
     
     @IBAction func checkButtonTapped(_ sender: UIButton) {
         guard let policy = storeReturnPolicy[self.selectStore!]
-
+                
         else {
             self.present(Service.createAlertController(title: "Please note:", message: "Select which store you want to check."), animated: true, completion: nil)
             return
@@ -78,10 +78,8 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
             guard let _ = self else { return }
             sender.setTitle(item, for: .normal)
             self!.options = item
-            
         }
     }
-    
     
     @objc func didTapsaveButton() {
         if let storeName = storeField.text, !storeName.isEmpty,
@@ -97,65 +95,11 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
             let timestamp = String(Int(NSDate().timeIntervalSince1970))
             identifier = timestamp
             completion?(storeName, itemTitle, note, targetDate, timestamp)
-            Service.uploadEntryToDatabase(storeName: storeName, itemName: itemTitle, notes: note, dueDate: dateStr, options: self.options, timestamp: timestamp)
-        }
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            textField.resignFirstResponder()
-            return true
+            UserFBController.uploadEntryToDatabase(storeName: storeName, itemName: itemTitle, notes: note, dueDate: dateStr, options: self.options, timestamp: timestamp)
         }
         
-        notificationCenter.getNotificationSettings { (settings) in
-
-            DispatchQueue.main.async
-            { [self] in
-                let title = self.storeField.text!
-                let message = self.options + " " + itemDetailField.text! + " " + self.notesField.text!
-                let date = self.datePicker.date
-
-                if(settings.authorizationStatus == .authorized)
-                {
-                    let content = UNMutableNotificationContent()
-                    content.title = title
-                    content.body = message
-
-                    let dateComp = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
-
-                    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: false)
-                    let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-
-                    self.notificationCenter.add(request) { (error) in
-                        if(error != nil)
-                        {
-                            print("Error " + error.debugDescription)
-                            return
-                        }
-                    }
-                    let ac = UIAlertController(title: "Reminder Scheduled!", message: "At " + Service.formattedDate(date: date), preferredStyle: .alert)
-                    ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in}))
-                    self.present(ac, animated: true)
-                }
-                else
-                {
-                    let ac = UIAlertController(title: "Enable reminders?", message: "To use this feature you must enable notifications in settings", preferredStyle: .alert)
-                    let goToSettings = UIAlertAction(title: "Settings", style: .default)
-                    { (_) in
-                        guard let setttingsURL = URL(string: UIApplication.openSettingsURLString)
-                        else
-                        {
-                            return
-                        }
-
-                        if(UIApplication.shared.canOpenURL(setttingsURL))
-                        {
-                            UIApplication.shared.open(setttingsURL) { (_) in}
-                        }
-                    }
-                    ac.addAction(goToSettings)
-                    ac.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in}))
-                    self.present(ac, animated: true)
-                }
-            }
-        }
+        ReminderController.shared.sendNotification(title: storeField.text ?? "", message: options + " " + itemDetailField.text! + " " + notesField.text!, date: datePicker.date, identifier: identifier)
+        self.present(Service.createAlertController(title: "Reminder Scheduled!", message: "At " + Service.formattedDate(date: datePicker.date)), animated: true, completion: nil)
     }
 }
 

@@ -18,7 +18,7 @@ class EntryListViewController: UIViewController {
     @IBOutlet weak var table: UITableView!
     
     var reminders = [PickupReturnModel]()
-    var service = Service()
+    var user = UserFBController()
     override func viewDidLoad() {
         super.viewDidLoad()
         table.backgroundView = UIImageView(image: UIImage(named: "Lavender-Aesthetic-Wallpapers"))
@@ -32,9 +32,9 @@ class EntryListViewController: UIViewController {
     func readDate() {
         let defaults = UserDefaults.standard
         //let service = Service()
-        service.getUserInfo(onSuccess: {
-            ReminderController.shared.Pickup = self.service.pickup_list
-            ReminderController.shared.Return = self.service.return_list
+        user.getUserInfo(onSuccess: {
+            ReminderController.shared.Pickup = self.user.pickup_list
+            ReminderController.shared.Return = self.user.return_list
 
             self.table.reloadData()
             self.WelcomeLabel.font = UIFont(name: "NoteWorthy", size: 20)

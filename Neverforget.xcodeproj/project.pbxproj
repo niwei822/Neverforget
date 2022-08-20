@@ -10,14 +10,12 @@
 		8C28F48F2888C19F003889B3 /* NotificationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28F48E2888C19F003889B3 /* NotificationSettings.swift */; };
 		8C917A002884838B008F9FAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9179FF2884838B008F9FAB /* AppDelegate.swift */; };
 		8C917A022884838B008F9FAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C917A012884838B008F9FAB /* SceneDelegate.swift */; };
-		8C917A042884838B008F9FAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C917A032884838B008F9FAB /* ViewController.swift */; };
 		8C917A072884838B008F9FAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C917A052884838B008F9FAB /* Main.storyboard */; };
 		8C917A0C2884838C008F9FAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C917A0A2884838C008F9FAB /* LaunchScreen.storyboard */; };
 		8C917A1428848419008F9FAB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C917A1328848419008F9FAB /* GoogleService-Info.plist */; };
 		8C917A1A2884871D008F9FAB /* PickupReturnModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C917A192884871D008F9FAB /* PickupReturnModel.swift */; };
 		8C917A1D28848765008F9FAB /* EntryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C917A1C28848765008F9FAB /* EntryListViewController.swift */; };
 		8C917A1F288489EE008F9FAB /* AddentryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C917A1E288489EE008F9FAB /* AddentryViewController.swift */; };
-		8C917A2228848A35008F9FAB /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C917A2128848A35008F9FAB /* UIColor+Extension.swift */; };
 		8C917A2428848A5A008F9FAB /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C917A2328848A5A008F9FAB /* Service.swift */; };
 		8C917A2728848A93008F9FAB /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C917A2628848A93008F9FAB /* HomePageViewController.swift */; };
 		8C917A2B28848DD7008F9FAB /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C917A2A28848DD7008F9FAB /* SignInViewController.swift */; };
@@ -32,7 +30,7 @@
 		8C9B0846289373380089B443 /* ReturnPolicyWebsiteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9B0845289373380089B443 /* ReturnPolicyWebsiteController.swift */; };
 		8C9D1AE52886527700EF0A77 /* ReminderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D1AE42886527700EF0A77 /* ReminderController.swift */; };
 		8CA351C2288A4FB400A66653 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA351C1288A4FB400A66653 /* MapViewController.swift */; };
-		8CAFDB0D289C4A950032BEE8 /* UserAuthrelated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFDB0C289C4A950032BEE8 /* UserAuthrelated.swift */; };
+		8CAFDB0D289C4A950032BEE8 /* UserFBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFDB0C289C4A950032BEE8 /* UserFBController.swift */; };
 		8CB7E860288B893B00609E61 /* LocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB7E85F288B893B00609E61 /* LocationSearchTableViewController.swift */; };
 		E4C95C5D1963B5358541C48A /* Pods_Neverforget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7841CEFA5406833D4EFEEEDC /* Pods_Neverforget.framework */; };
 /* End PBXBuildFile section */
@@ -58,15 +56,13 @@
 		8C9179FC2884838B008F9FAB /* Neverforget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neverforget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C9179FF2884838B008F9FAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C917A012884838B008F9FAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8C917A032884838B008F9FAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8C917A062884838B008F9FAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C917A0B2884838C008F9FAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C917A0D2884838C008F9FAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8C917A1328848419008F9FAB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8C917A1328848419008F9FAB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8C917A192884871D008F9FAB /* PickupReturnModel.swift */ = {isa = PBXFileReference; indentWidth = 3; lastKnownFileType = sourcecode.swift; path = PickupReturnModel.swift; sourceTree = "<group>"; };
 		8C917A1C28848765008F9FAB /* EntryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListViewController.swift; sourceTree = "<group>"; };
 		8C917A1E288489EE008F9FAB /* AddentryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddentryViewController.swift; sourceTree = "<group>"; };
-		8C917A2128848A35008F9FAB /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8C917A2328848A5A008F9FAB /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		8C917A2628848A93008F9FAB /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		8C917A2A28848DD7008F9FAB /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -81,7 +77,7 @@
 		8C9B0845289373380089B443 /* ReturnPolicyWebsiteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnPolicyWebsiteController.swift; sourceTree = "<group>"; };
 		8C9D1AE42886527700EF0A77 /* ReminderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderController.swift; sourceTree = "<group>"; };
 		8CA351C1288A4FB400A66653 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		8CAFDB0C289C4A950032BEE8 /* UserAuthrelated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthrelated.swift; sourceTree = "<group>"; };
+		8CAFDB0C289C4A950032BEE8 /* UserFBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFBController.swift; sourceTree = "<group>"; };
 		8CB7E85F288B893B00609E61 /* LocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTableViewController.swift; sourceTree = "<group>"; };
 		DE7A0171EB43A48684B9E7DA /* Pods-Neverforget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neverforget.release.xcconfig"; path = "Target Support Files/Pods-Neverforget/Pods-Neverforget.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +102,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8C4454B028AF210E0068532E /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				8C917A052884838B008F9FAB /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		8C4454B128AF211D0068532E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8C4454B028AF210E0068532E /* Storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8C4454B228AF22670068532E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8C917A2528848A78008F9FAB /* Auth */,
+				8C917A1B28848744008F9FAB /* Dashboard */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8C4454B328AF22A80068532E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8C9D1AE32886522800EF0A77 /* ModelControllers */,
+				8C4454B228AF22670068532E /* ViewControllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8C4454B428AF23790068532E /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				8CA351C1288A4FB400A66653 /* MapViewController.swift */,
+				8CB7E85F288B893B00609E61 /* LocationSearchTableViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		8C9179F32884838B008F9FAB = {
 			isa = PBXGroup;
 			children = (
@@ -127,20 +166,11 @@
 		8C9179FE2884838B008F9FAB /* Neverforget */ = {
 			isa = PBXGroup;
 			children = (
-				8C93052C289599890015D467 /* Fonts */,
-				8C9D1AE32886522800EF0A77 /* ModelControllers */,
-				8C917A2528848A78008F9FAB /* Auth */,
+				8C4454B328AF22A80068532E /* Controllers */,
 				8C917A2028848A0B008F9FAB /* Extensions+Helpers */,
-				8C917A1B28848744008F9FAB /* User */,
 				8C917A18288486E6008F9FAB /* Models */,
-				8C9179FF2884838B008F9FAB /* AppDelegate.swift */,
-				8C917A012884838B008F9FAB /* SceneDelegate.swift */,
-				8C917A032884838B008F9FAB /* ViewController.swift */,
-				8C917A052884838B008F9FAB /* Main.storyboard */,
-				8C974A7528A852B500ED3CEC /* Assets.xcassets */,
-				8C917A0A2884838C008F9FAB /* LaunchScreen.storyboard */,
-				8C917A0D2884838C008F9FAB /* Info.plist */,
-				8C917A1328848419008F9FAB /* GoogleService-Info.plist */,
+				8C4454B128AF211D0068532E /* Views */,
+				8CCC612828AF096300DF0D75 /* Resources */,
 			);
 			path = Neverforget;
 			sourceTree = "<group>";
@@ -153,25 +183,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		8C917A1B28848744008F9FAB /* User */ = {
+		8C917A1B28848744008F9FAB /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
 				8C917A1C28848765008F9FAB /* EntryListViewController.swift */,
 				8C917A1E288489EE008F9FAB /* AddentryViewController.swift */,
 				8C917A332884FE4B008F9FAB /* EntryDetailViewController.swift */,
-				8CA351C1288A4FB400A66653 /* MapViewController.swift */,
-				8CB7E85F288B893B00609E61 /* LocationSearchTableViewController.swift */,
+				8C4454B428AF23790068532E /* Map */,
 			);
-			path = User;
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		8C917A2028848A0B008F9FAB /* Extensions+Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				8C917A2128848A35008F9FAB /* UIColor+Extension.swift */,
 				8C28F48E2888C19F003889B3 /* NotificationSettings.swift */,
 				8C917A2328848A5A008F9FAB /* Service.swift */,
-				8CAFDB0C289C4A950032BEE8 /* UserAuthrelated.swift */,
 			);
 			path = "Extensions+Helpers";
 			sourceTree = "<group>";
@@ -201,10 +228,25 @@
 		8C9D1AE32886522800EF0A77 /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8CAFDB0C289C4A950032BEE8 /* UserFBController.swift */,
 				8C9D1AE42886527700EF0A77 /* ReminderController.swift */,
 				8C9B0845289373380089B443 /* ReturnPolicyWebsiteController.swift */,
 			);
 			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		8CCC612828AF096300DF0D75 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8C93052C289599890015D467 /* Fonts */,
+				8C974A7528A852B500ED3CEC /* Assets.xcassets */,
+				8C917A0A2884838C008F9FAB /* LaunchScreen.storyboard */,
+				8C917A1328848419008F9FAB /* GoogleService-Info.plist */,
+				8C917A0D2884838C008F9FAB /* Info.plist */,
+				8C917A012884838B008F9FAB /* SceneDelegate.swift */,
+				8C9179FF2884838B008F9FAB /* AppDelegate.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		9C25FEA894DE967DE6B72305 /* Pods */ = {
@@ -344,14 +386,12 @@
 				8C917A2D28848E0E008F9FAB /* SignUpViewController.swift in Sources */,
 				8C9B0846289373380089B443 /* ReturnPolicyWebsiteController.swift in Sources */,
 				8C9D1AE52886527700EF0A77 /* ReminderController.swift in Sources */,
-				8C917A2228848A35008F9FAB /* UIColor+Extension.swift in Sources */,
 				8C917A2428848A5A008F9FAB /* Service.swift in Sources */,
 				8C917A2728848A93008F9FAB /* HomePageViewController.swift in Sources */,
-				8C917A042884838B008F9FAB /* ViewController.swift in Sources */,
 				8C917A342884FE4B008F9FAB /* EntryDetailViewController.swift in Sources */,
 				8C917A1D28848765008F9FAB /* EntryListViewController.swift in Sources */,
 				8C917A002884838B008F9FAB /* AppDelegate.swift in Sources */,
-				8CAFDB0D289C4A950032BEE8 /* UserAuthrelated.swift in Sources */,
+				8CAFDB0D289C4A950032BEE8 /* UserFBController.swift in Sources */,
 				8CB7E860288B893B00609E61 /* LocationSearchTableViewController.swift in Sources */,
 				8C917A022884838B008F9FAB /* SceneDelegate.swift in Sources */,
 				8C917A1A2884871D008F9FAB /* PickupReturnModel.swift in Sources */,
@@ -510,7 +550,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WA62BJ74N5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Neverforget/Info.plist;
+				INFOPLIST_FILE = Neverforget/Resources/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We use your location to help navigate you";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We use your location to help navigate you";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -542,7 +582,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WA62BJ74N5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Neverforget/Info.plist;
+				INFOPLIST_FILE = Neverforget/Resources/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We use your location to help navigate you";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We use your location to help navigate you";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

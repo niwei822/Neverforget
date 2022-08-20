@@ -28,13 +28,11 @@ class HomePageViewController: UIViewController {
             viewController.modalPresentationStyle = .overFullScreen
             self.present(viewController, animated: true, completion: nil)
         }
-        
     }
     
     @IBAction func SignInButtonTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "signInsegue", sender: nil)
     }
-    
     
     @IBAction func SignUpButtonTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "signUpsegue", sender: nil)

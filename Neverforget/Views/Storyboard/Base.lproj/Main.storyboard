@@ -157,7 +157,6 @@ NeverForget</string>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="331" id="p6z-iB-xD6"/>
-                                    <constraint firstAttribute="height" constant="432" id="swN-NN-xBF"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -563,7 +562,7 @@ NeverForget</string>
                                             <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="signInButtonTapped:" destination="sZJ-qk-7Xu" eventType="touchUpInside" id="qiE-Zs-FvT"/>
+                                            <action selector="signInButtonTapped:" destination="sZJ-qk-7Xu" eventType="touchUpInside" id="4tq-1N-fQ1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwd-cs-n7W">

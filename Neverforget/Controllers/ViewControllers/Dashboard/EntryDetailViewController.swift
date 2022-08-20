@@ -66,44 +66,17 @@ class EntryDetailViewController: UIViewController {
         if self.options == "" {
             self.options = entry?.options
         }
-        Service.uploadEntryToDatabase(storeName: storename, itemName: item, notes: notes, dueDate: Service.formattedDate(date: self.date!), options: self.options!, timestamp: entry!.timestamp)
+        UserFBController.uploadEntryToDatabase(storeName: storename, itemName: item, notes: notes, dueDate: Service.formattedDate(date: self.date!), options: self.options!, timestamp: entry!.timestamp)
         let scheduler = NotificationSettings()
         let entry = PickupReturnModel(storeName: storename, itemTitle: item, dueDate: self.date!, notes: notes, options: self.options!, timestamp: entry!.timestamp)
         scheduler.removeScheduledNotification(for: entry)
-        notificationCenter.getNotificationSettings { (settings) in
+        ReminderController.shared.sendNotification(title: storeField.text ?? "", message: options ?? "" + " " + itemDetailField.text! + " " + notesField.text!, date: datePicker.date, identifier: entry.timestamp)
 
-            DispatchQueue.main.async
-            { [self] in
-                let title = self.storeField.text!
-                let message = (self.options ?? "") + " " + itemDetailField.text! + " " + self.notesField.text!
-                let date = self.datePicker.date
-
-                if(settings.authorizationStatus == .authorized)
-                {
-                    let content = UNMutableNotificationContent()
-                    content.title = title
-                    content.body = message
-
-                    let dateComp = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
-
-                    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: false)
-                    let request = UNNotificationRequest(identifier: entry.timestamp, content: content, trigger: trigger)
-
-                    self.notificationCenter.add(request) { (error) in
-                        if(error != nil)
-                        {
-                            print("Error " + error.debugDescription)
-                            return
-                        }
-                    }
-                    let ac = UIAlertController(title: "Reminder Updated!", message: "At " + Service.formattedDate(date: date), preferredStyle: .alert)
+        let ac = UIAlertController(title: "Reminder Updated!", message: "At " + Service.formattedDate(date: datePicker.date), preferredStyle: .alert)
                     ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in}))
                     self.present(ac, animated: true)
-                }
-            }
-        }
         navigationController?.popViewController(animated: true)
-    }
+   }
     
     @IBAction func DatepickerTapped(_ sender: Any) {
         self.date = datePicker.date

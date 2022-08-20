@@ -30,14 +30,11 @@ class ForgotPWViewController: UIViewController {
     }
     
     @IBAction func forgotPWButtonTapped(_ sender: Any) {
-        let auth = Auth.auth()
-        auth.sendPasswordReset(withEmail: emailField.text!) { (error) in
-            if let error = error {
-                let alert = Service.createAlertController(title: "Error", message: error.localizedDescription)
-                self.present(alert, animated: true, completion: nil)
-                return
-            }
+        UserFBController.forgotPassword(email: emailField.text ?? "") {
             let alert = Service.createAlertController(title: "Hurray", message: "A password reset email has been sent!")
+            self.present(alert, animated: true, completion: nil)
+        } onError: { error in
+            let alert = Service.createAlertController(title: "Error", message: error?.localizedDescription ?? "error")
             self.present(alert, animated: true, completion: nil)
         }
     }

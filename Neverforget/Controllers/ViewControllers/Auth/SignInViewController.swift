@@ -36,21 +36,18 @@ class SignInViewController: UIViewController {
         ForgotPWButton.layer.cornerRadius = 10
         ForgotPWButton.clipsToBounds = true
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func signInButtonTapped(_ sender: Any) {
         let defaults = UserDefaults.standard
-        let auth = Auth.auth()
-        auth.signIn(withEmail: emailField.text!, password: passwordField.text!) {(authResult, error) in
-            if error != nil {
-                self.present(Service.createAlertController(title: "Error", message: error!.localizedDescription), animated: true, completion: nil)
-                return
-            }
+        UserFBController.signInUser(email: emailField.text ?? "", password: passwordField.text ?? "", onSuccess: {
             defaults.set(true, forKey: "isuserSignedin")
             self.performSegue(withIdentifier: "userSignedInsegue", sender: nil)
+        }) { (error) in
+            self.present(Service.createAlertController(title: "Error", message: error!.localizedDescription), animated: true, completion: nil)
         }
     }
+    
     
     @IBAction func forgotPWButtonTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "forgotPWsegue", sender: nil)

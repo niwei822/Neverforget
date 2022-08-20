@@ -38,7 +38,7 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
         let defaults = UserDefaults.standard
-        Service.signUpUser(email: signEmailField.text!, password: signPasswordField.text!, name: userNameField.text!, onSuccess: {
+        UserFBController.signUpUser(email: signEmailField.text!, password: signPasswordField.text!, name: userNameField.text!, onSuccess: {
             defaults.set(true, forKey: "isuserSignedin")
             self.performSegue(withIdentifier: "userSignedupsegue", sender: nil)
         }) { (error) in
