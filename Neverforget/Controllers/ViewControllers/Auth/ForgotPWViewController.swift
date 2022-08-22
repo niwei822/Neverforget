@@ -11,11 +11,12 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class ForgotPWViewController: UIViewController {
-
+    
     @IBOutlet weak var emailField: UITextField!
     
     @IBOutlet weak var SendButton: UIButton!
     override func viewDidLoad() {
+        super.viewDidLoad()
         let backgroundimage = UIImageView(frame: UIScreen.main.bounds)
         backgroundimage.image = UIImage(named: "Lavender-Aesthetic-Wallpapers")
         backgroundimage.contentMode = .scaleAspectFill
@@ -24,9 +25,6 @@ class ForgotPWViewController: UIViewController {
         emailField.clipsToBounds = true
         SendButton.layer.cornerRadius = 10
         SendButton.clipsToBounds = true
-        super.viewDidLoad()
-
-       
     }
     
     @IBAction func forgotPWButtonTapped(_ sender: Any) {

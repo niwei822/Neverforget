@@ -29,6 +29,7 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
     var identifier : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let backgroundimage = UIImageView(frame: UIScreen.main.bounds)
         backgroundimage.image = UIImage(named: "Lavender-Aesthetic-Wallpapers")
         backgroundimage.contentMode = .scaleAspectFill
@@ -82,13 +83,43 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
     }
     
     @objc func didTapsaveButton() {
+        notificationCenter.getNotificationSettings { (settings) in
+            //excute main thread first while updating UIalert
+            DispatchQueue.main.async
+            { [self] in
+                let title = storeField.text
+                let message =  options + " " + itemDetailField.text! + " " + notesField.text!
+                let date = datePicker.date
+                if(settings.authorizationStatus == .authorized)
+                { ReminderController.shared.sendNotification(title: title ?? "", message: message, date: date, identifier: identifier)
+                    self.present(Service.createAlertController(title: "Reminder Scheduled!", message: "At " + Service.formattedDate(date: self.datePicker.date)), animated: true, completion: nil)
+                }
+                else {
+                    let ac = UIAlertController(title: "Enable reminders?", message: "To use this feature you must enable notifications in settings", preferredStyle: .alert)
+                    let goToSettings = UIAlertAction(title: "Settings", style: .default)
+                    { (_) in
+                        guard let setttingsURL = URL(string: UIApplication.openSettingsURLString)
+                        else
+                        {
+                            return
+                        }
+                        if(UIApplication.shared.canOpenURL(setttingsURL))
+                        {
+                            UIApplication.shared.open(setttingsURL) { (_) in}
+                        }
+                    }
+                    ac.addAction(goToSettings)
+                    ac.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in}))
+                    self.present(ac, animated: true)
+                }
+            }
+        }
         if let storeName = storeField.text, !storeName.isEmpty,
-           //let options = self.options, !options.isEmpty,
            let itemTitle = itemDetailField.text, !itemTitle.isEmpty,
            let note = notesField.text, !note.isEmpty {
             let targetDate = datePicker.date
             let dateStr = Service.formattedDate(date: targetDate)
-            print(self.options)
+            //print(self.options)
             if self.options.isEmpty{
                 self.present(Service.createAlertController(title: "Please note:", message: "Select Pickup or Return."), animated: true, completion: nil)
             }
@@ -97,9 +128,5 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
             completion?(storeName, itemTitle, note, targetDate, timestamp)
             UserFBController.uploadEntryToDatabase(storeName: storeName, itemName: itemTitle, notes: note, dueDate: dateStr, options: self.options, timestamp: timestamp)
         }
-        
-        ReminderController.shared.sendNotification(title: storeField.text ?? "", message: options + " " + itemDetailField.text! + " " + notesField.text!, date: datePicker.date, identifier: identifier)
-        self.present(Service.createAlertController(title: "Reminder Scheduled!", message: "At " + Service.formattedDate(date: datePicker.date)), animated: true, completion: nil)
     }
 }
-

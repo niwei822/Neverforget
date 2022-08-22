@@ -10,6 +10,7 @@ import MapKit
 import CoreLocation
 
 protocol HandleMapSearch {
+    //post the dialogue bubble of the pin.
     func dropPinZoomIn(placemark:MKPlacemark)
 }
 
@@ -17,20 +18,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var resultSearchController:UISearchController? = nil
     var selectedPin:MKPlacemark? = nil
     @IBOutlet var map: MKMapView!
-    
+    //give access to location manager
     var locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
+        //handle responses asynchronously
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
+        // triggers the location permission dialog
         locationManager.requestWhenInUseAuthorization()
+        //get current location update and call delegate didUpdateLocations
         locationManager.startUpdatingLocation()
         map.delegate = self
-        
+        //locationsearchtable serve as the searchResultsUpdater delegate
         let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTableViewController
         resultSearchController = UISearchController(searchResultsController: locationSearchTable)
         resultSearchController?.searchResultsUpdater = locationSearchTable
+        //configures the search bar
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
         searchBar.searchTextField.font = UIFont(name: "Deysia Brush", size: 15)
@@ -39,13 +44,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         resultSearchController?.hidesNavigationBarDuringPresentation = false
         resultSearchController?.obscuresBackgroundDuringPresentation  = true
         definesPresentationContext = true
-        
+        //passes along a handle of the mapView
         locationSearchTable.mapView = map
         locationSearchTable.handleMapSearchDelegate = self
     }
-    
+    //get an array of locations
+    //Zoom to the user’s current location
+    //Tells the delegate that new location data is available.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
+            //print(location)
             let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
             let region = MKCoordinateRegion(center: location.coordinate, span: span)
             map.setRegion(region, animated: true)
@@ -68,6 +76,7 @@ extension MapViewController: HandleMapSearch {
            let state = placemark.administrativeArea {
             annotation.subtitle = "\(number) \(street),\(city), \(state)"
         }
+        //To initialize the bubble.
         map.addAnnotation(annotation)
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegion(center: placemark.coordinate, span: span)

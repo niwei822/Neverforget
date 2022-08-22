@@ -18,25 +18,29 @@ class LocationSearchTableViewController: UITableViewController {
         super.viewDidLoad()
     }
 }
-
+//Protocol to update search results based on user's search bar input
 extension LocationSearchTableViewController : UISearchResultsUpdating {
+    //Set up the API call
     func updateSearchResults(for searchController: UISearchController) {
         guard let mapView = mapView,
               let searchBarText = searchController.searchBar.text else { return }
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = searchBarText
         request.region = mapView.region
+        //performs the actual search on the request object.
         let search = MKLocalSearch(request: request)
+        // responses:an array of mapItems.
         search.start { [self] response, _ in
             guard let response = response else {
                 return
             }
             self.matchingItems = response.mapItems
             self.tableView.reloadData()
+            //after this, data come back from API
         }
     }
 }
-
+//Set up the Table View Data Source
 extension LocationSearchTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return matchingItems.count

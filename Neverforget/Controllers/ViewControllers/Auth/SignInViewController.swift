@@ -11,13 +11,13 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class SignInViewController: UIViewController {
-
+    
     @IBOutlet weak var emailField: UITextField!
     
     @IBOutlet weak var passwordField: UITextField!
     
     @IBOutlet weak var signInButton: UIButton!
-   
+    
     @IBOutlet weak var ForgotPWButton: UIButton!
     
     override func viewDidLoad() {
@@ -26,7 +26,6 @@ class SignInViewController: UIViewController {
         backgroundimage.image = UIImage(named: "Lavender-Aesthetic-Wallpapers")
         backgroundimage.contentMode = .scaleAspectFill
         view.insertSubview(backgroundimage, at: 0)
-        
         emailField.layer.cornerRadius = 10
         emailField.clipsToBounds = true
         passwordField.layer.cornerRadius = 10
@@ -35,7 +34,6 @@ class SignInViewController: UIViewController {
         signInButton.clipsToBounds = true
         ForgotPWButton.layer.cornerRadius = 10
         ForgotPWButton.clipsToBounds = true
-
     }
     
     @IBAction func signInButtonTapped(_ sender: Any) {
@@ -47,7 +45,6 @@ class SignInViewController: UIViewController {
             self.present(Service.createAlertController(title: "Error", message: error!.localizedDescription), animated: true, completion: nil)
         }
     }
-    
     
     @IBAction func forgotPWButtonTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "forgotPWsegue", sender: nil)

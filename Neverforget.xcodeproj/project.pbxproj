@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C28F48F2888C19F003889B3 /* NotificationSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C28F48E2888C19F003889B3 /* NotificationSettings.swift */; };
 		8C917A002884838B008F9FAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9179FF2884838B008F9FAB /* AppDelegate.swift */; };
 		8C917A022884838B008F9FAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C917A012884838B008F9FAB /* SceneDelegate.swift */; };
 		8C917A072884838B008F9FAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C917A052884838B008F9FAB /* Main.storyboard */; };
@@ -52,7 +51,6 @@
 /* Begin PBXFileReference section */
 		2E0F80B6EC612A129F4B22F9 /* Pods-Neverforget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neverforget.debug.xcconfig"; path = "Target Support Files/Pods-Neverforget/Pods-Neverforget.debug.xcconfig"; sourceTree = "<group>"; };
 		7841CEFA5406833D4EFEEEDC /* Pods_Neverforget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neverforget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C28F48E2888C19F003889B3 /* NotificationSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettings.swift; sourceTree = "<group>"; };
 		8C9179FC2884838B008F9FAB /* Neverforget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neverforget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C9179FF2884838B008F9FAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C917A012884838B008F9FAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 		8C917A2028848A0B008F9FAB /* Extensions+Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				8C28F48E2888C19F003889B3 /* NotificationSettings.swift */,
 				8C917A2328848A5A008F9FAB /* Service.swift */,
 			);
 			path = "Extensions+Helpers";
@@ -398,7 +395,6 @@
 				8C917A2B28848DD7008F9FAB /* SignInViewController.swift in Sources */,
 				8C917A2F28848E40008F9FAB /* ForgotPWViewController.swift in Sources */,
 				8C917A1F288489EE008F9FAB /* AddentryViewController.swift in Sources */,
-				8C28F48F2888C19F003889B3 /* NotificationSettings.swift in Sources */,
 				8CA351C2288A4FB400A66653 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

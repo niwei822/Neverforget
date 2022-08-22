@@ -11,6 +11,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class UserFBController{
+    
     var pickup_list : [PickupReturnModel] = []
     var return_list : [PickupReturnModel] = []
     
@@ -48,7 +49,6 @@ class UserFBController{
         }
     }
     
-    
     static func uploadNewUserToDatabase(email: String, name: String, onSuccess: @escaping() -> Void) {
         let rootref = Database.database().reference()
         let ref = rootref.child("users")
@@ -66,6 +66,7 @@ class UserFBController{
         }
         ref.child("users").child(uid).observe(.value, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String : Any] {
+                //save email as userEmailKey's value
                 let email = dictionary["email"] as! String
                 let name = dictionary["name"] as! String
                 defaults.set(email, forKey: "userEmailKey")
@@ -75,13 +76,12 @@ class UserFBController{
         }) { (error) in
             onError(error)
         }
-        
         ref.child("users").child(uid).child("entries").observe(.value, with: { (snapshot) in
             self.pickup_list = []
             self.return_list = []
-            
             for snap in snapshot.children {
                 let userSnap = snap as! DataSnapshot
+                //print(userSnap)
                 let userdict = userSnap.value as? NSDictionary
                 let formatteddate = Service.stringToDate(date: userdict?.value(forKey: "duedate") as! String)
                 let entry = PickupReturnModel(storeName: userdict?.value(forKey: "storeName") as? String ?? "", itemTitle: (userdict?.value(forKey: "item") as? String), dueDate: formatteddate, notes: userdict?.value(forKey: "notes") as? String, options: userdict?.value(forKey: "options") as! String, timestamp: userSnap.key)
@@ -102,7 +102,6 @@ class UserFBController{
         let rootref = Database.database().reference()
         let ref = rootref.child("users")
         let uid = Auth.auth().currentUser?.uid
-        
         ref.child(uid!).child("entries").updateChildValues([timestamp: [
             "storeName": storeName,
             "item": itemName,

@@ -21,6 +21,7 @@ class HomePageViewController: UIViewController {
         view.insertSubview(backgroundimage, at: 0)
         SignUpButton.layer.cornerRadius = 10
         SignUpButton.clipsToBounds = true
+        //store data
         let defaults = UserDefaults.standard
         if defaults.bool(forKey: "isuserSignedin") {
             let viewController = self.storyboard?.instantiateViewController(identifier: "welcomeViewID") as! UINavigationController
@@ -31,6 +32,7 @@ class HomePageViewController: UIViewController {
     }
     
     @IBAction func SignInButtonTapped(_ sender: Any) {
+        // To go to the signin view.
         self.performSegue(withIdentifier: "signInsegue", sender: nil)
     }
     
