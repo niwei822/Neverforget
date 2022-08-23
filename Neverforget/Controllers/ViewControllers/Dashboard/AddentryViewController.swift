@@ -39,6 +39,7 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
         itemDetailField.delegate = self
         notesField.delegate = self
         datePicker.overrideUserInterfaceStyle = .light
+        //Requesting Notification Permission
         notificationCenter.requestAuthorization(options: [.alert,.badge,  .sound]) {
             (permissionGranted, error) in
             if(!permissionGranted)
@@ -84,6 +85,8 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
     
     @objc func didTapsaveButton() {
         notificationCenter.getNotificationSettings { (settings) in
+            // completion block called on background thread
+            //update settings property on the main
             //excute main thread first while updating UIalert
             DispatchQueue.main.async
             { [self] in

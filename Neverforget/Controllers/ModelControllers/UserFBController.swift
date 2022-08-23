@@ -79,6 +79,7 @@ class UserFBController{
         ref.child("users").child(uid).child("entries").observe(.value, with: { (snapshot) in
             self.pickup_list = []
             self.return_list = []
+           // print(self.pickup_list)
             for snap in snapshot.children {
                 let userSnap = snap as! DataSnapshot
                 //print(userSnap)

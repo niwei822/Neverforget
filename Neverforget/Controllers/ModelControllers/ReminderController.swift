@@ -24,6 +24,7 @@ class ReminderController {
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = message
+        // extracts dateComponents from datepicker
         let dateComp = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: false)
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
