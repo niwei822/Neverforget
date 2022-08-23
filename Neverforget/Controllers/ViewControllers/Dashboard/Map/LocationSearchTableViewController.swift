@@ -16,6 +16,7 @@ protocol HandleMapSearch {
 class LocationSearchTableViewController: UITableViewController {
     
     var matchingItems:[MKMapItem] = []
+    //a handle to the map from the previous screen
     var mapView: MKMapView? = nil
     var handleMapSearchDelegate:HandleMapSearch? = nil
     
@@ -25,7 +26,7 @@ class LocationSearchTableViewController: UITableViewController {
 }
 //Protocol to update search results based on user's search bar input
 extension LocationSearchTableViewController : UISearchResultsUpdating {
-    //Set up the API call
+    //Set up the API. call delegate that responds to search bar text entry
     func updateSearchResults(for searchController: UISearchController) {
         guard let mapView = mapView,
               let searchBarText = searchController.searchBar.text else { return }
