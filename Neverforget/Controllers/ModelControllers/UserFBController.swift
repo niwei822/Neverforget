@@ -116,7 +116,6 @@ class UserFBController{
         let rootref = Database.database().reference()
         let ref = rootref.child("users")
         let uid = Auth.auth().currentUser?.uid
-        
         ref.child(uid!).child("entries").child(timestamp).removeValue { (error, ref) in
             if error != nil {
                 print(error?.localizedDescription ?? "error")

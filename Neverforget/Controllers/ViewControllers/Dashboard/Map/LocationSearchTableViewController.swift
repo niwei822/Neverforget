@@ -8,6 +8,11 @@
 import UIKit
 import MapKit
 
+protocol HandleMapSearch {
+    //bs post the dialogue bubble of the pin.
+    func dropPinZoomIn(placemark:MKPlacemark)
+}
+
 class LocationSearchTableViewController: UITableViewController {
     
     var matchingItems:[MKMapItem] = []

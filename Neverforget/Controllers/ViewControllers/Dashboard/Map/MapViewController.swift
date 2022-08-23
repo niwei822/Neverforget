@@ -9,11 +9,6 @@ import UIKit
 import MapKit
 import CoreLocation
 
-protocol HandleMapSearch {
-    //post the dialogue bubble of the pin.
-    func dropPinZoomIn(placemark:MKPlacemark)
-}
-
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     var resultSearchController:UISearchController? = nil
     var selectedPin:MKPlacemark? = nil
@@ -83,4 +78,3 @@ extension MapViewController: HandleMapSearch {
         map.setRegion(region, animated: true)
     }
 }
-

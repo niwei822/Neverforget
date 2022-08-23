@@ -65,10 +65,8 @@ class EntryDetailViewController: UIViewController {
             self.options = entry?.options
         }
         UserFBController.uploadEntryToDatabase(storeName: storename, itemName: item, notes: notes, dueDate: Service.formattedDate(date: self.date!), options: self.options!, timestamp: entry!.timestamp)
-        //
-        let entry = PickupReturnModel(storeName: storename, itemTitle: item, dueDate: self.date!, notes: notes, options: self.options!, timestamp: entry!.timestamp)
-        ReminderController.shared.removeScheduledNotification(for: entry)
-        ReminderController.shared.sendNotification(title: storeField.text ?? "", message: (options ?? "") + " " + itemDetailField.text! + " " + notesField.text!, date: datePicker.date, identifier: entry.timestamp)
+        ReminderController.shared.removeScheduledNotification(for: entry!)
+        ReminderController.shared.sendNotification(title: storeField.text ?? "", message: (options ?? "") + " " + itemDetailField.text! + " " + notesField.text!, date: datePicker.date, identifier: entry!.timestamp)
         self.present(Service.createAlertController(title: "Reminder Updated!", message: "At " + Service.formattedDate(date: datePicker.date)), animated: true, completion: nil)
         navigationController?.popViewController(animated: true)
     }
