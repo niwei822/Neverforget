@@ -86,8 +86,10 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
     @objc func didTapsaveButton() {
         notificationCenter.getNotificationSettings { (settings) in
             // completion block called on background thread
-            //update settings property on the main
+            //update settings property on the main,send ui related work to main quene
             //excute main thread first while updating UIalert
+            //The main queue is responsible for drawing UI and responding to user input.
+            //
             DispatchQueue.main.async
             { [self] in
                 let title = storeField.text
