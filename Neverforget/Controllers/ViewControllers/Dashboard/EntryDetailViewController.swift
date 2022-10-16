@@ -45,7 +45,7 @@ class EntryDetailViewController: UIViewController {
     }
     
     @IBAction func checkButtonTapped(_ sender: UIButton) {
-        guard let policy = storeReturnPolicy[self.selectStore!]
+        guard let policy = storeReturnPolicy[self.selectStore!]?[0]
         else {
             self.present(Service.createAlertController(title: "Please note:", message: "Select which store you want to check."), animated: true, completion: nil)
             return
@@ -66,7 +66,7 @@ class EntryDetailViewController: UIViewController {
         }
         UserFBController.uploadEntryToDatabase(storeName: storename, itemName: item, notes: notes, dueDate: Service.formattedDate(date: self.date!), options: self.options!, timestamp: entry!.timestamp)
         ReminderController.shared.removeScheduledNotification(for: entry!)
-        ReminderController.shared.sendNotification(title: storeField.text ?? "", message: (options ?? "") + " " + itemDetailField.text! + " " + notesField.text!, date: datePicker.date, identifier: entry!.timestamp)
+        ReminderController.shared.sendNotificationByDate(title: storeField.text ?? "", message: (options ?? "") + " " + itemDetailField.text! + " " + notesField.text!, date: datePicker.date, identifier: entry!.timestamp)
         self.present(Service.createAlertController(title: "Reminder Updated!", message: "At " + Service.formattedDate(date: datePicker.date)), animated: true, completion: nil)
         navigationController?.popViewController(animated: true)
     }

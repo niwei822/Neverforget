@@ -22,6 +22,12 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
     
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    @IBOutlet weak var reminderDayField: UITextField!
+    
+    @IBOutlet weak var reminderHourField: UITextField!
+    
+    @IBOutlet weak var reminderMinuteField: UITextField!
+    
     public var completion: ((String, String, String, Date, String) -> Void)?
     
     let dropdown = DropDown()
@@ -38,6 +44,9 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
         storeField.delegate = self
         itemDetailField.delegate = self
         notesField.delegate = self
+        reminderDayField.delegate = self
+        reminderHourField.delegate = self
+        reminderMinuteField.delegate = self
         datePicker.overrideUserInterfaceStyle = .light
         //Requesting Notification Permission
         notificationCenter.requestAuthorization(options: [.alert,.badge,  .sound]) {
@@ -62,7 +71,7 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
     }
     
     @IBAction func checkButtonTapped(_ sender: UIButton) {
-        guard let policy = storeReturnPolicy[self.selectStore!]
+        guard let policy = storeReturnPolicy[self.selectStore!]?[0]
                 
         else {
             self.present(Service.createAlertController(title: "Please note:", message: "Select which store you want to check."), animated: true, completion: nil)
@@ -95,11 +104,19 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
                 let title = storeField.text
                 let message =  options + " " + itemDetailField.text! + " " + notesField.text!
                 let date = datePicker.date
-                if(settings.authorizationStatus == .authorized)
-                { ReminderController.shared.sendNotification(title: title ?? "", message: message, date: date, identifier: identifier)
-                    self.present(Service.createAlertController(title: "Reminder Scheduled!", message: "At " + Service.formattedDate(date: self.datePicker.date)), animated: true, completion: nil)
-                }
-                else {
+                let reminderDay = reminderDayField.text
+                let reminderHour = reminderHourField.text
+                let reminderMinute = reminderMinuteField.text
+                print(reminderDay! + "Days" + reminderHour! + "Hours" + reminderMinute! + "Minutes")
+                if (settings.authorizationStatus == .authorized) {
+                    if (reminderDay! == "0" && reminderHour! == "0" && reminderMinute! == "0") {
+                        ReminderController.shared.sendNotificationByDate(title: title ?? "", message: message, date: date, identifier: identifier)
+                        self.present(Service.createAlertController(title: "Reminder Scheduled!", message: "At " + Service.formattedDate(date: self.datePicker.date)), animated: true, completion: nil)
+                    } else {
+                        ReminderController.shared.sendNotificationByFrequency(title: title ?? "", message: message, remindDay: reminderDay!, remindHour: reminderHour!, remindMinute: reminderMinute!, identifier: identifier)
+                        self.present(Service.createAlertController(title: "Reminder Scheduled!", message: "Remind every " + (reminderDay ?? "0") + "Days" + (reminderHour ?? "0") + "Hours" + (reminderMinute ?? "0") + "Minutes"), animated: true, completion: nil)
+                    }
+                } else {
                     let ac = UIAlertController(title: "Enable reminders?", message: "To use this feature you must enable notifications in settings", preferredStyle: .alert)
                     let goToSettings = UIAlertAction(title: "Settings", style: .default)
                     { (_) in
