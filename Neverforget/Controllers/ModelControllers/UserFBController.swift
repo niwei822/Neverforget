@@ -85,7 +85,7 @@ class UserFBController{
                 //print(userSnap)
                 let userdict = userSnap.value as? NSDictionary
                 let formatteddate = Service.stringToDate(date: userdict?.value(forKey: "duedate") as! String)
-                let entry = PickupReturnModel(storeName: userdict?.value(forKey: "storeName") as? String ?? "", itemTitle: (userdict?.value(forKey: "item") as? String), dueDate: formatteddate, notes: userdict?.value(forKey: "notes") as? String, options: userdict?.value(forKey: "options") as! String, timestamp: userSnap.key)
+                let entry = PickupReturnModel(storeName: userdict?.value(forKey: "storeName") as? String ?? "", itemTitle: (userdict?.value(forKey: "item") as? String), dueDate: formatteddate, remindDay: (userdict?.value(forKey: "remindDay") as? String)!, remindHour: (userdict?.value(forKey: "remindHour") as? String)!, remindMinute: (userdict?.value(forKey: "remindMinute") as? String)!, notes: userdict?.value(forKey: "notes") as? String, options: userdict?.value(forKey: "options") as! String, timestamp: userSnap.key)
                 if entry.options == "Pickup" {
                     self.pickup_list.append(entry)
                 } else if entry.options == "Return" {
@@ -99,7 +99,7 @@ class UserFBController{
         }
     }
     
-    static func uploadEntryToDatabase(storeName: String, itemName: String, notes: String, dueDate: String, options: String, timestamp: String) {
+    static func uploadEntryToDatabase(storeName: String, itemName: String, notes: String, dueDate: String, remind_Day: String, remind_Hour: String, remind_Minute: String, options: String, timestamp: String) {
         let rootref = Database.database().reference()
         let ref = rootref.child("users")
         let uid = Auth.auth().currentUser?.uid
@@ -108,6 +108,9 @@ class UserFBController{
             "item": itemName,
             "notes": notes,
             "duedate": dueDate,
+            "remindDay": remind_Day,
+            "remindHour": remind_Hour,
+            "remindMinute": remind_Minute,
             "options": options
         ]])
     }

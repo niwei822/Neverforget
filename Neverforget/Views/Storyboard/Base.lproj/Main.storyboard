@@ -168,6 +168,11 @@ NeverForget</string>
                             <constraint firstItem="wpM-GU-KgC" firstAttribute="width" secondItem="3Na-rm-84g" secondAttribute="width" multiplier="0.8" id="fw5-wn-Koy"/>
                             <constraint firstItem="wpM-GU-KgC" firstAttribute="centerX" secondItem="3Na-rm-84g" secondAttribute="centerX" id="hhW-1Q-CvZ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fw5-wn-Koy"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="YoG-Rt-G5v"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -293,11 +298,14 @@ NeverForget</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fNy-9m-gfN">
-                                <rect key="frame" x="30" y="108" width="354" height="784"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="fNy-9m-gfN">
+                                <rect key="frame" x="30" y="88" width="354" height="795.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyl-uE-MsH">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="43"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="eeu-qJ-3kh"/>
+                                        </constraints>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Click to select return or pickup:">
@@ -310,36 +318,101 @@ NeverForget</string>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter store name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lJ8-BF-IQR">
-                                        <rect key="frame" x="0.0" y="63" width="354" height="38.5"/>
+                                        <rect key="frame" x="0.0" y="52" width="354" height="38.5"/>
                                         <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What you want to return/pickup?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oV4-py-5Mn">
-                                        <rect key="frame" x="0.0" y="121.5" width="354" height="38.5"/>
+                                        <rect key="frame" x="0.0" y="104.5" width="354" height="38.5"/>
                                         <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notes:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h1m-8q-Ah0">
-                                        <rect key="frame" x="0.0" y="180" width="354" height="38.5"/>
+                                        <rect key="frame" x="0.0" y="157" width="354" height="38.5"/>
                                         <color key="backgroundColor" red="0.89803922179999995" green="0.84705877299999999" blue="0.98431372640000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
-                                    <datePicker contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="UlA-Ta-rgj">
-                                        <rect key="frame" x="0.0" y="238.5" width="354" height="366.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select remind date and time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="Akl-Zq-D6R">
+                                        <rect key="frame" x="0.0" y="209.5" width="354" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="peA-RT-Y8m"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="18"/>
+                                        <color key="textColor" systemColor="tintColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="UlA-Ta-rgj">
+                                        <rect key="frame" x="0.0" y="243.5" width="354" height="373"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="373" id="3be-RZ-uds"/>
+                                        </constraints>
                                         <connections>
                                             <action selector="DatepickerTapped:" destination="Prt-wU-K5e" eventType="valueChanged" id="KMA-XI-2or"/>
                                         </connections>
                                     </datePicker>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2TX-zk-BPD">
-                                        <rect key="frame" x="0.0" y="625" width="354" height="43"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or select remind frequency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dG5-yU-Iwn">
+                                        <rect key="frame" x="0.0" y="630.5" width="354" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="uhT-V3-u9u"/>
+                                            <constraint firstAttribute="height" constant="25" id="s6v-sy-CgI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                        <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ndm-Fe-6LJ">
+                                        <rect key="frame" x="0.0" y="669.5" width="354" height="30"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="Day" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dnu-N5-g3u">
+                                                <rect key="frame" x="0.0" y="0.0" width="42.5" height="30"/>
+                                                <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEF-NO-C5K">
+                                                <rect key="frame" x="62.5" y="0.0" width="42" height="27.5"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                                <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="Hour" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WF3-2P-JcN">
+                                                <rect key="frame" x="124.5" y="0.0" width="42.5" height="30"/>
+                                                <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hrs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUH-P4-tuz">
+                                                <rect key="frame" x="187" y="0.0" width="42.5" height="27.5"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                                <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="Minute" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXR-hp-P8D">
+                                                <rect key="frame" x="249.5" y="0.0" width="42" height="30"/>
+                                                <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWB-10-BTU">
+                                                <rect key="frame" x="311.5" y="0.0" width="42.5" height="27.5"/>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                                <color key="textColor" red="0.49290469069999998" green="0.2049975164" blue="0.47212634749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="7wa-gi-xnd"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2TX-zk-BPD">
+                                        <rect key="frame" x="0.0" y="713.5" width="354" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="uhT-V3-u9u"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Update" buttonSize="medium">
@@ -351,7 +424,7 @@ NeverForget</string>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="-100" translatesAutoresizingMaskIntoConstraints="NO" id="i6W-VL-shP">
-                                        <rect key="frame" x="0.0" y="688" width="354" height="96"/>
+                                        <rect key="frame" x="0.0" y="745.5" width="354" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5o-YN-7iD">
                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="43"/>
@@ -382,9 +455,9 @@ NeverForget</string>
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="96" id="k5G-R0-AnH"/>
+                                            <constraint firstAttribute="height" constant="50" id="k5G-R0-AnH"/>
                                             <constraint firstAttribute="trailing" secondItem="q5o-YN-7iD" secondAttribute="trailing" id="nKt-tj-faQ"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="tin-Nb-Wao"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="tin-Nb-Wao"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -393,7 +466,7 @@ NeverForget</string>
                         <viewLayoutGuide key="safeArea" id="HPD-VQ-y13"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="fNy-9m-gfN" firstAttribute="top" secondItem="HPD-VQ-y13" secondAttribute="top" constant="20" id="2AD-37-z4g"/>
+                            <constraint firstItem="fNy-9m-gfN" firstAttribute="top" secondItem="HPD-VQ-y13" secondAttribute="top" id="2AD-37-z4g"/>
                             <constraint firstItem="fNy-9m-gfN" firstAttribute="centerX" secondItem="nZK-ql-9tg" secondAttribute="centerX" id="CQX-RN-433"/>
                             <constraint firstItem="fNy-9m-gfN" firstAttribute="leading" secondItem="HPD-VQ-y13" secondAttribute="leading" constant="30" id="hYZ-6f-c0v"/>
                             <constraint firstItem="fNy-9m-gfN" firstAttribute="centerX" secondItem="HPD-VQ-y13" secondAttribute="centerX" id="rYS-t5-hRS"/>
@@ -413,6 +486,9 @@ NeverForget</string>
                         <outlet property="datePicker" destination="UlA-Ta-rgj" id="cEM-0w-tGR"/>
                         <outlet property="itemDetailField" destination="oV4-py-5Mn" id="Dj1-1H-cTv"/>
                         <outlet property="notesField" destination="h1m-8q-Ah0" id="2qV-sq-6Yx"/>
+                        <outlet property="reminderDayField" destination="Dnu-N5-g3u" id="ZXj-h3-dwG"/>
+                        <outlet property="reminderHourField" destination="WF3-2P-JcN" id="fIx-cU-o5E"/>
+                        <outlet property="reminderMinuteField" destination="DXR-hp-P8D" id="AHO-tw-0Xk"/>
                         <outlet property="storeField" destination="lJ8-BF-IQR" id="e36-uR-wlD"/>
                     </connections>
                 </viewController>
@@ -573,10 +649,10 @@ NeverForget</string>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ReminderDayField" destination="1vv-Ju-gvK" id="TBz-2l-kZA"/>
                         <outlet property="datePicker" destination="D8U-v0-hSQ" id="652-FX-2e8"/>
                         <outlet property="itemDetailField" destination="hCc-Qb-oGs" id="ymz-be-Ybm"/>
                         <outlet property="notesField" destination="WEa-p8-0dw" id="g8k-LA-tRb"/>
+                        <outlet property="reminderDayField" destination="1vv-Ju-gvK" id="1km-0N-sEQ"/>
                         <outlet property="reminderHourField" destination="oqg-p6-mpL" id="vM9-lm-H0L"/>
                         <outlet property="reminderMinuteField" destination="1tT-7R-MXV" id="kMr-hX-m5I"/>
                         <outlet property="storeField" destination="rx4-sz-JCy" id="UL1-qT-fhK"/>

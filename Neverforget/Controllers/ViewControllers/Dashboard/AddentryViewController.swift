@@ -109,6 +109,9 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
                 let reminderMinute = reminderMinuteField.text
                 print(reminderDay! + "Days" + reminderHour! + "Hours" + reminderMinute! + "Minutes")
                 if (settings.authorizationStatus == .authorized) {
+                    if self.options.isEmpty{
+                        self.present(Service.createAlertController(title: "Please note:", message: "Select Pickup or Return."), animated: true, completion: nil)
+                    }
                     if (reminderDay! == "0" && reminderHour! == "0" && reminderMinute! == "0") {
                         ReminderController.shared.sendNotificationByDate(title: title ?? "", message: message, date: date, identifier: identifier)
                         self.present(Service.createAlertController(title: "Reminder Scheduled!", message: "At " + Service.formattedDate(date: self.datePicker.date)), animated: true, completion: nil)
@@ -137,18 +140,20 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
             }
         }
         if let storeName = storeField.text, !storeName.isEmpty,
-           let itemTitle = itemDetailField.text, !itemTitle.isEmpty,
-           let note = notesField.text, !note.isEmpty {
+            let itemTitle = itemDetailField.text, !itemTitle.isEmpty,
+            let note = notesField.text, !note.isEmpty,
+            let remindDay = reminderDayField.text, !remindDay.isEmpty,
+            let remindHour = reminderHourField.text, !remindHour.isEmpty,
+            let remindMinute = reminderMinuteField.text, !remindMinute.isEmpty {
             let targetDate = datePicker.date
             let dateStr = Service.formattedDate(date: targetDate)
-            //print(self.options)
             if self.options.isEmpty{
                 self.present(Service.createAlertController(title: "Please note:", message: "Select Pickup or Return."), animated: true, completion: nil)
             }
             let timestamp = String(Int(NSDate().timeIntervalSince1970))
             identifier = timestamp
             completion?(storeName, itemTitle, note, targetDate, timestamp)
-            UserFBController.uploadEntryToDatabase(storeName: storeName, itemName: itemTitle, notes: note, dueDate: dateStr, options: self.options, timestamp: timestamp)
+            UserFBController.uploadEntryToDatabase(storeName: storeName, itemName: itemTitle, notes: note, dueDate: dateStr, remind_Day: remindDay, remind_Hour: remindHour, remind_Minute: remindMinute, options: self.options, timestamp: timestamp)
         }
     }
 }

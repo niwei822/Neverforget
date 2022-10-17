@@ -16,6 +16,11 @@ class EntryDetailViewController: UIViewController {
     @IBOutlet weak var itemDetailField: UITextField!
     @IBOutlet weak var notesField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var reminderDayField: UITextField!
+    
+    @IBOutlet weak var reminderHourField: UITextField!
+    
+    @IBOutlet weak var reminderMinuteField: UITextField!
     
     var options : String? = ""
     var selectStore: String? = ""
@@ -56,6 +61,9 @@ class EntryDetailViewController: UIViewController {
     @IBAction func UpdateButtonTapped(_ sender: Any) {
         guard let storename = storeField.text, !storename.isEmpty,
               let item = itemDetailField.text, !item.isEmpty,
+              let remindDay = reminderDayField.text, !remindDay.isEmpty,
+              let remindHour = reminderHourField.text, !remindHour.isEmpty,
+              let remindMinute = reminderMinuteField.text, !remindMinute.isEmpty,
               let notes = notesField.text, !notes.isEmpty
         else { return }
         if self.date == nil {
@@ -64,10 +72,15 @@ class EntryDetailViewController: UIViewController {
         if self.options == "" {
             self.options = entry?.options
         }
-        UserFBController.uploadEntryToDatabase(storeName: storename, itemName: item, notes: notes, dueDate: Service.formattedDate(date: self.date!), options: self.options!, timestamp: entry!.timestamp)
+        UserFBController.uploadEntryToDatabase(storeName: storename, itemName: item, notes: notes, dueDate: Service.formattedDate(date: self.date!), remind_Day: remindDay, remind_Hour: remindHour, remind_Minute: remindMinute, options: self.options!, timestamp: entry!.timestamp)
         ReminderController.shared.removeScheduledNotification(for: entry!)
-        ReminderController.shared.sendNotificationByDate(title: storeField.text ?? "", message: (options ?? "") + " " + itemDetailField.text! + " " + notesField.text!, date: datePicker.date, identifier: entry!.timestamp)
-        self.present(Service.createAlertController(title: "Reminder Updated!", message: "At " + Service.formattedDate(date: datePicker.date)), animated: true, completion: nil)
+        if (remindDay == "0" && remindHour == "0" && remindMinute == "0") {
+            ReminderController.shared.sendNotificationByDate(title: storeField.text ?? "", message: (options ?? "") + " " + itemDetailField.text! + " " + notesField.text!, date: datePicker.date, identifier: entry!.timestamp)
+            self.present(Service.createAlertController(title: "Reminder Updated!", message: "At " + Service.formattedDate(date: datePicker.date)), animated: true, completion: nil)
+        } else {
+            ReminderController.shared.sendNotificationByFrequency(title: storename , message: (options ?? "") + " " + item + " " + notes, remindDay: remindDay, remindHour: remindHour, remindMinute: remindMinute, identifier: entry!.timestamp)
+            self.present(Service.createAlertController(title: "Reminder Updated!", message: "Remind every " + (remindDay ) + "Days" + (remindHour ) + "Hours" + (remindMinute ) + "Minutes"), animated: true, completion: nil)
+        }
         navigationController?.popViewController(animated: true)
     }
     
@@ -93,6 +106,9 @@ class EntryDetailViewController: UIViewController {
         storeField.text = entry.storeName
         notesField.text = entry.notes
         datePicker.date = entry.dueDate
+        reminderDayField.text = entry.remindDay
+        reminderHourField.text = entry.remindHour
+        reminderMinuteField.text = entry.remindMinute
     }
 }
 
