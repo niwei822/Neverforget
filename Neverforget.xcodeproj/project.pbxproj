@@ -103,7 +103,6 @@
 		8C4454B028AF210E0068532E /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				8C917A052884838B008F9FAB /* Main.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -111,6 +110,7 @@
 		8C4454B128AF211D0068532E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8C917A052884838B008F9FAB /* Main.storyboard */,
 				8C4454B028AF210E0068532E /* Storyboard */,
 			);
 			path = Views;
