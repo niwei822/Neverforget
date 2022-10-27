@@ -19,6 +19,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signPasswordField: UITextField!
     
     @IBOutlet weak var signUpButton: UIButton!
+    var activeTextField : UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,9 @@ class SignUpViewController: UIViewController {
         signPasswordField.clipsToBounds = true
         signUpButton.layer.cornerRadius = 10
         signUpButton.clipsToBounds = true
+        userNameField.delegate = self
+        signEmailField.delegate = self
+        signPasswordField.delegate = self
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
@@ -44,5 +48,12 @@ class SignUpViewController: UIViewController {
         }) { (error) in
             self.present(Service.createAlertController(title: "Error", message: error!.localizedDescription), animated: true, completion: nil)
         }
+    }
+}
+
+extension SignUpViewController: UITextFieldDelegate {
+     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // dismiss keyboard
+        return true
     }
 }

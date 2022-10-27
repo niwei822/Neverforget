@@ -28,14 +28,15 @@ class EntryListViewController: UIViewController {
     }
     
     func readDate() {
-        let defaults = UserDefaults.standard
-        user.getUserInfo(onSuccess: {
+        //let defaults = UserDefaults.standard
+        user.getUserInfo(onSuccess: { [self] in
             ReminderController.shared.Pickup = self.user.pickup_list
             ReminderController.shared.Return = self.user.return_list
             self.table.reloadData()
             self.WelcomeLabel.font = UIFont(name: "NoteWorthy", size: 20)
             //get user name by looking at the userNameKey
-            self.WelcomeLabel.text = "Welcome \(defaults.string(forKey: "userNameKey")!)"
+            self.WelcomeLabel.text = "Welcome \(user.name)"
+            //self.WelcomeLabel.text = "Welcome"
         }) { (error) in
             self.present(Service.createAlertController(title: "Error", message: error!.localizedDescription), animated: true, completion: nil)
         }

@@ -14,6 +14,8 @@ class UserFBController{
     
     var pickup_list : [PickupReturnModel] = []
     var return_list : [PickupReturnModel] = []
+    var email = String()
+    var name = String()
     
     static func signInUser(email: String, password: String, onSuccess: @escaping() -> Void, onError: @escaping (_ error: Error?) -> Void) {
         let auth = Auth.auth()
@@ -59,7 +61,6 @@ class UserFBController{
     
     public func getUserInfo(onSuccess: @escaping () -> Void, onError: @escaping (_ error: Error?) -> Void) {
         let ref = Database.database().reference()
-        let defaults = UserDefaults.standard
         guard let uid = Auth.auth().currentUser?.uid else {
             print("User not found")
             return
@@ -67,10 +68,8 @@ class UserFBController{
         ref.child("users").child(uid).observe(.value, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String : Any] {
                 //save email as userEmailKey's value
-                let email = dictionary["email"] as! String
-                let name = dictionary["name"] as! String
-                defaults.set(email, forKey: "userEmailKey")
-                defaults.set(name, forKey: "userNameKey")
+                self.email = dictionary["email"] as! String
+                self.name = dictionary["name"] as! String
                 onSuccess()
             }
         }) { (error) in
