@@ -34,6 +34,8 @@ class SignInViewController: UIViewController {
         signInButton.clipsToBounds = true
         ForgotPWButton.layer.cornerRadius = 10
         ForgotPWButton.clipsToBounds = true
+        emailField.delegate = self
+        passwordField.delegate = self
     }
     
     @IBAction func signInButtonTapped(_ sender: Any) {
@@ -48,5 +50,12 @@ class SignInViewController: UIViewController {
     
     @IBAction func forgotPWButtonTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "forgotPWsegue", sender: nil)
+    }
+}
+
+extension SignInViewController: UITextFieldDelegate {
+     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // dismiss keyboard
+        return true
     }
 }

@@ -25,6 +25,7 @@ class ForgotPWViewController: UIViewController {
         emailField.clipsToBounds = true
         SendButton.layer.cornerRadius = 10
         SendButton.clipsToBounds = true
+        emailField.delegate = self
     }
     
     @IBAction func forgotPWButtonTapped(_ sender: Any) {
@@ -35,5 +36,12 @@ class ForgotPWViewController: UIViewController {
             let alert = Service.createAlertController(title: "Error", message: error?.localizedDescription ?? "error")
             self.present(alert, animated: true, completion: nil)
         }
+    }
+}
+
+extension ForgotPWViewController: UITextFieldDelegate {
+     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // dismiss keyboard
+        return true
     }
 }

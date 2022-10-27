@@ -58,6 +58,11 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // dismiss keyboard
+        return true
+    }
+    
     @IBAction func checkPolicyButton(_ sender: UIButton) {
         dropdown.dataSource = ["Walmart", "Target", "Amazon", "Kohl's", "Costco", "DSW", "Apple", "Macy's"]
         dropdown.anchorView = sender

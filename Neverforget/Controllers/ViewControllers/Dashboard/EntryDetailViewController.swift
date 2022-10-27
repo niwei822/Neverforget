@@ -35,6 +35,12 @@ class EntryDetailViewController: UIViewController {
         backgroundimage.contentMode = .scaleAspectFill
         view.insertSubview(backgroundimage, at: 0)
         updateViews()
+        storeField.delegate = self
+        itemDetailField.delegate = self
+        notesField.delegate = self
+        reminderDayField.delegate = self
+        reminderHourField.delegate = self
+        reminderMinuteField.delegate = self
     }
     
     @IBAction func checkPolicyButton(_ sender: UIButton) {
@@ -112,4 +118,9 @@ class EntryDetailViewController: UIViewController {
     }
 }
 
-
+extension EntryDetailViewController: UITextFieldDelegate {
+     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // dismiss keyboard
+        return true
+    }
+}
