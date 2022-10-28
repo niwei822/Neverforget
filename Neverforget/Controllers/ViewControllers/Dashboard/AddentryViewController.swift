@@ -41,6 +41,18 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
         backgroundimage.contentMode = .scaleAspectFill
         view.insertSubview(backgroundimage, at: 0)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(didTapsaveButton))
+        storeField.layer.masksToBounds = true
+        storeField.layer.borderColor = UIColor.purple.cgColor
+        storeField.layer.borderWidth = 0.1
+        storeField.attributedPlaceholder = NSAttributedString(string: "Enter store name:", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
+        itemDetailField.layer.masksToBounds = true
+        itemDetailField.layer.borderColor = UIColor.purple.cgColor
+        itemDetailField.layer.borderWidth = 0.1
+        itemDetailField.attributedPlaceholder = NSAttributedString(string: "What you want to return/pickup?", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
+        notesField.layer.masksToBounds = true
+        notesField.layer.borderColor = UIColor.purple.cgColor
+        notesField.layer.borderWidth = 0.1
+        notesField.attributedPlaceholder = NSAttributedString(string: "Notes:", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
         storeField.delegate = self
         itemDetailField.delegate = self
         notesField.delegate = self

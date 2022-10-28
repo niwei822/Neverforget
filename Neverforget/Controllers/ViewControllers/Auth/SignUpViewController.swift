@@ -29,10 +29,22 @@ class SignUpViewController: UIViewController {
         view.insertSubview(backgroundimage, at: 0)
         userNameField.layer.cornerRadius = 10
         userNameField.clipsToBounds = true
+        userNameField.layer.masksToBounds = true
+        userNameField.layer.borderColor = UIColor.purple.cgColor
+        userNameField.layer.borderWidth = 0.1
+        userNameField.attributedPlaceholder = NSAttributedString(string: "Username:", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
         signEmailField.layer.cornerRadius = 10
         signEmailField.clipsToBounds = true
+        signEmailField.layer.masksToBounds = true
+        signEmailField.layer.borderColor = UIColor.purple.cgColor
+        signEmailField.layer.borderWidth = 0.1
+        signEmailField.attributedPlaceholder = NSAttributedString(string: "Enter email:", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
         signPasswordField.layer.cornerRadius = 10
         signPasswordField.clipsToBounds = true
+        signPasswordField.layer.masksToBounds = true
+        signPasswordField.layer.borderColor = UIColor.purple.cgColor
+        signPasswordField.layer.borderWidth = 0.1
+        signPasswordField.attributedPlaceholder = NSAttributedString(string: "Create password:", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
         signUpButton.layer.cornerRadius = 10
         signUpButton.clipsToBounds = true
         userNameField.delegate = self

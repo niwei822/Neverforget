@@ -20,9 +20,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //handle responses asynchronously
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
+        //locationManager.requestAlwaysAuthorization()
         // triggers the location permission dialog
-        locationManager.requestWhenInUseAuthorization()
+        //locationManager.requestWhenInUseAuthorization()
         //get current location update and call delegate didUpdateLocations
         locationManager.startUpdatingLocation()
         map.delegate = self
@@ -34,7 +34,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
         searchBar.searchTextField.font = UIFont(name: "Deysia Brush", size: 15)
-        searchBar.placeholder = "Search for stores"
+        searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Search for stores:", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
         navigationItem.searchController = resultSearchController
         resultSearchController?.hidesNavigationBarDuringPresentation = false
         resultSearchController?.obscuresBackgroundDuringPresentation  = true
@@ -76,5 +76,6 @@ extension MapViewController: HandleMapSearch {
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let region = MKCoordinateRegion(center: placemark.coordinate, span: span)
         map.setRegion(region, animated: true)
+        locationManager.stopUpdatingLocation()
     }
 }

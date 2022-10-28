@@ -10,6 +10,7 @@ import FirebaseCore
 import FirebaseAuth
 import FirebaseDatabase
 import UserNotifications
+import CoreLocation
 
 class EntryListViewController: UIViewController {
     
@@ -19,12 +20,14 @@ class EntryListViewController: UIViewController {
     
     var reminders = [PickupReturnModel]()
     var user = UserFBController()
+    var locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         table.backgroundView = UIImageView(image: UIImage(named: "Lavender-Aesthetic-Wallpapers"))
         table.delegate = self
         table.dataSource = self
         readDate()
+        locationManager.requestAlwaysAuthorization()
     }
     
     func readDate() {

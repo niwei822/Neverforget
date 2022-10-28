@@ -28,8 +28,16 @@ class SignInViewController: UIViewController {
         view.insertSubview(backgroundimage, at: 0)
         emailField.layer.cornerRadius = 10
         emailField.clipsToBounds = true
+        emailField.layer.masksToBounds = true
+        emailField.layer.borderColor = UIColor.purple.cgColor
+        emailField.layer.borderWidth = 0.1
+        emailField.attributedPlaceholder = NSAttributedString(string: "Enter email:", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
         passwordField.layer.cornerRadius = 10
         passwordField.clipsToBounds = true
+        passwordField.layer.masksToBounds = true
+        passwordField.layer.borderColor = UIColor.purple.cgColor
+        passwordField.layer.borderWidth = 0.1
+        passwordField.attributedPlaceholder = NSAttributedString(string: "Password:", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
         signInButton.layer.cornerRadius = 10
         signInButton.clipsToBounds = true
         ForgotPWButton.layer.cornerRadius = 10
