@@ -58,14 +58,7 @@ class UserFBController{
         let ref = rootref.child("users")
         let uid = Auth.auth().currentUser?.uid
         let notificationCenter = UNUserNotificationCenter.current()
-        notificationCenter.removeAllPendingNotificationRequests()
-        
-//        ref.child("users").child(uid!).child("entries").observe(.value, with: { (snapshot) in
-//            for snap in snapshot.children {
-//                let userSnap = snap as! DataSnapshot
-//                notificationCenter.removePendingNotificationRequests(withIdentifiers: [userSnap.key])
-//            }
-//        })
+        notificationCenter.removeAllPendingNotificationRequests() //remove all pending notifications
         
         ref.child(uid!).removeValue { (error, ref) in
             if error != nil {
@@ -89,24 +82,6 @@ class UserFBController{
         let uid = Auth.auth().currentUser?.uid
         ref.child(uid!).setValue(["email":email, "name":name, "entries": ""])
         onSuccess()
-    }
-    
-    static func getUsername() -> String {
-        let ref = Database.database().reference()
-        var username = ""
-        guard let uid = Auth.auth().currentUser?.uid else {
-            print("User not found")
-            return ""
-        }
-        ref.child("users").child(uid).observe(.value, with: { (snapshot) in
-            if let dictionary = snapshot.value as? [String : Any] {
-                //save email as userEmailKey's value
-                username = dictionary["name"] as! String
-                print("KSJDFKLJSDLKJLKDJFLSKDJFSD")
-                print(username)
-            }
-        })
-        return username
     }
     
     public func getUserInfo(onSuccess: @escaping () -> Void, onError: @escaping (_ error: Error?) -> Void) {
