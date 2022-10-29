@@ -45,18 +45,6 @@ class EntryListViewController: UIViewController {
         }
     }
     
-//    @IBAction func LogoutButtonTapped(_ sender: Any) {
-//        let auth = Auth.auth()
-//        do {
-//            try auth.signOut()
-//            let defaults = UserDefaults.standard
-//            defaults.set(false, forKey: "isuserSignedin")
-//            self.dismiss(animated: true, completion: nil)
-//        }catch let signOutError {
-//            self.present(Service.createAlertController(title: "Error", message: signOutError.localizedDescription), animated: true, completion: nil)
-//        }
-//    }
-    
     @IBAction func didTapAdd(_ sender: Any) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "add") as? AddentryViewController else {
             return

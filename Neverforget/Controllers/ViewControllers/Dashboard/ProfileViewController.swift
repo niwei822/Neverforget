@@ -31,7 +31,7 @@ class ProfileViewController:
     
     @IBAction func DeleteButtonTapped(_ sender: Any) {
         let defaults = UserDefaults.standard
-        let alertController = UIAlertController(title: "Warning!", message: "Are you sure you want to delete your account?", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Warning!", message: "Are you sure you want to delete your account? All the data associated with this account will be deleted.", preferredStyle: .alert)
         // Create OK button
         let OKAction = UIAlertAction(title: "Confirm", style: .default) { (action:UIAlertAction!) in
             // Code in this block will trigger when OK button tapped.
