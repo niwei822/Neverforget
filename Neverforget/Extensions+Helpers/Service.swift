@@ -15,9 +15,14 @@ class Service {
     static func createAlertController(title:  String, message: String) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
-            alert.dismiss(animated: true, completion: nil)
+            //alert.dismiss(animated: true, completion: nil)
+            print("OK")
         }
         alert.addAction(okAction)
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction!) in
+//                    print("Cancel button tapped");
+//                }
+//                alert.addAction(cancelAction)
         return alert
     }
     

@@ -32,9 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //declare AppDelegate is the delegate
       UNUserNotificationCenter.current().delegate = self
     }
-
-
-
 }
 
 // MARK: - UNUserNotificationCenterDelegate

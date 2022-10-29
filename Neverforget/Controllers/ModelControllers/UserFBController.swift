@@ -9,6 +9,7 @@ import UIKit
 import FirebaseCore
 import FirebaseAuth
 import FirebaseDatabase
+import UserNotifications
 
 class UserFBController{
     
@@ -51,12 +52,61 @@ class UserFBController{
         }
     }
     
+    static func deleteuser(){
+        
+        let rootref = Database.database().reference()
+        let ref = rootref.child("users")
+        let uid = Auth.auth().currentUser?.uid
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.removeAllPendingNotificationRequests()
+        
+//        ref.child("users").child(uid!).child("entries").observe(.value, with: { (snapshot) in
+//            for snap in snapshot.children {
+//                let userSnap = snap as! DataSnapshot
+//                notificationCenter.removePendingNotificationRequests(withIdentifiers: [userSnap.key])
+//            }
+//        })
+        
+        ref.child(uid!).removeValue { (error, ref) in
+            if error != nil {
+                print(error?.localizedDescription ?? "error")
+            }
+        }
+        
+        let user = Auth.auth().currentUser
+        user?.delete { error in
+          if let error = error {
+              print("Error Delete Account")
+          } else {
+              print("Account Deleted")
+          }
+        }
+    }
+    
     static func uploadNewUserToDatabase(email: String, name: String, onSuccess: @escaping() -> Void) {
         let rootref = Database.database().reference()
         let ref = rootref.child("users")
         let uid = Auth.auth().currentUser?.uid
         ref.child(uid!).setValue(["email":email, "name":name, "entries": ""])
         onSuccess()
+    }
+    
+    static func getUsername() -> String {
+        let ref = Database.database().reference()
+        var username = ""
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print("User not found")
+            return ""
+        }
+        ref.child("users").child(uid).observe(.value, with: { (snapshot) in
+            if let dictionary = snapshot.value as? [String : Any] {
+                //save email as userEmailKey's value
+                username = dictionary["name"] as! String
+                print("KSJDFKLJSDLKJLKDJFLSKDJFSD")
+                print(username)
+            }
+        })
+        return username
     }
     
     public func getUserInfo(onSuccess: @escaping () -> Void, onError: @escaping (_ error: Error?) -> Void) {

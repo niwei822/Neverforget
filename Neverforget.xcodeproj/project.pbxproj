@@ -31,6 +31,7 @@
 		8CA351C2288A4FB400A66653 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA351C1288A4FB400A66653 /* MapViewController.swift */; };
 		8CAFDB0D289C4A950032BEE8 /* UserFBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAFDB0C289C4A950032BEE8 /* UserFBController.swift */; };
 		8CB7E860288B893B00609E61 /* LocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB7E85F288B893B00609E61 /* LocationSearchTableViewController.swift */; };
+		8CCC2ABA290C83FA0016EEE0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC2AB9290C83FA0016EEE0 /* ProfileViewController.swift */; };
 		E4C95C5D1963B5358541C48A /* Pods_Neverforget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7841CEFA5406833D4EFEEEDC /* Pods_Neverforget.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		8CAFDB0C289C4A950032BEE8 /* UserFBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFBController.swift; sourceTree = "<group>"; };
 		8CB7E85F288B893B00609E61 /* LocationSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTableViewController.swift; sourceTree = "<group>"; };
 		8CCB5C9E290AC53300AFF657 /* Neverforget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Neverforget.entitlements; sourceTree = "<group>"; };
+		8CCC2AB9290C83FA0016EEE0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DE7A0171EB43A48684B9E7DA /* Pods-Neverforget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neverforget.release.xcconfig"; path = "Target Support Files/Pods-Neverforget/Pods-Neverforget.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +188,7 @@
 		8C917A1B28848744008F9FAB /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				8CCC2AB9290C83FA0016EEE0 /* ProfileViewController.swift */,
 				8C917A1C28848765008F9FAB /* EntryListViewController.swift */,
 				8C917A1E288489EE008F9FAB /* AddentryViewController.swift */,
 				8C917A332884FE4B008F9FAB /* EntryDetailViewController.swift */,
@@ -389,6 +392,7 @@
 				8C917A2728848A93008F9FAB /* HomePageViewController.swift in Sources */,
 				8C917A342884FE4B008F9FAB /* EntryDetailViewController.swift in Sources */,
 				8C917A1D28848765008F9FAB /* EntryListViewController.swift in Sources */,
+				8CCC2ABA290C83FA0016EEE0 /* ProfileViewController.swift in Sources */,
 				8C917A002884838B008F9FAB /* AppDelegate.swift in Sources */,
 				8CAFDB0D289C4A950032BEE8 /* UserFBController.swift in Sources */,
 				8CB7E860288B893B00609E61 /* LocationSearchTableViewController.swift in Sources */,
