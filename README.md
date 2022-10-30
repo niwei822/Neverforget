@@ -1,5 +1,5 @@
 # NeverForget
-## An app that reminds customers about their in-store pick-ups and order returns.
+## An app that reminds customers about their in-store pick-ups and order returns.Available now on the AppStore: https://apps.apple.com/app/id6443999706
 
 ## Background
 As a customer who enjoys shopping, I sometimes forget to pick up the order and return the merchandise. To ensure that I don't miss the opportunity to pick up or return my order, I would like to be reminded of my in-store pickup and return due dates. Although there are many great reminder applications, not many are focused on improving the shopping trip experience. Developing this application was solely motivated by this purpose.
