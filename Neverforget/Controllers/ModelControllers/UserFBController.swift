@@ -15,8 +15,8 @@ class UserFBController{
     
     var pickup_list : [PickupReturnModel] = []
     var return_list : [PickupReturnModel] = []
-    var email = String()
-    var name = String()
+    var email = ""
+    var name = ""
     
     static func signInUser(email: String, password: String, onSuccess: @escaping() -> Void, onError: @escaping (_ error: Error?) -> Void) {
         let auth = Auth.auth()
@@ -68,8 +68,8 @@ class UserFBController{
         
         let user = Auth.auth().currentUser
         user?.delete { error in
-          if let error = error {
-              print("Error Delete Account")
+          if error != nil {
+              print(error?.localizedDescription ?? "Error Delete Account")
           } else {
               print("Account Deleted")
           }
