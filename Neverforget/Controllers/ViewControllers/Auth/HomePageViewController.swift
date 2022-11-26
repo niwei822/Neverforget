@@ -15,6 +15,7 @@ class HomePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: false)
         let backgroundimage = UIImageView(frame: UIScreen.main.bounds)
         backgroundimage.image = UIImage(named: "1234")
         backgroundimage.contentMode = .scaleAspectFill
