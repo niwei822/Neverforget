@@ -20,9 +20,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //handle responses asynchronously
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        //locationManager.requestAlwaysAuthorization()
-        // triggers the location permission dialog
-        //locationManager.requestWhenInUseAuthorization()
         //get current location update and call delegate didUpdateLocations
         locationManager.startUpdatingLocation()
         map.delegate = self

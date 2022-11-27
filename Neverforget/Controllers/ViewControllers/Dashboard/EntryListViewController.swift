@@ -27,6 +27,7 @@ class EntryListViewController: UIViewController {
         table.delegate = self
         table.dataSource = self
         readDate()
+        // triggers the location permission dialog
         locationManager.requestAlwaysAuthorization()
     }
     
@@ -118,8 +119,6 @@ extension EntryListViewController: UITableViewDelegate, UITableViewDataSource {
             let entry = ReminderController.shared.sections[indexPath.section][indexPath.row]
             ReminderController.shared.deleteEntry(entry)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            let id = entry.timestamp
-            Database.database().reference().child("entries").child(id).removeValue()
         }
     }
     
