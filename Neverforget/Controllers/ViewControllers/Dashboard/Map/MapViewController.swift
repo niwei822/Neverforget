@@ -54,6 +54,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 }
 
 extension MapViewController: HandleMapSearch {
+    //Then you pass the placemark to the map controller via the custom protocol method.
     func dropPinZoomIn(placemark:MKPlacemark){
         // cache the pin
         selectedPin = placemark

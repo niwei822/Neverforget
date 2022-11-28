@@ -53,6 +53,7 @@ extension LocationSearchTableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        //When a search result row is selected, you find the appropriate placemark based on the row number.
         let selectedItem = matchingItems[indexPath.row].placemark
         print(selectedItem)
         cell.textLabel?.text = selectedItem.name
@@ -66,6 +67,7 @@ extension LocationSearchTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedItem = matchingItems[indexPath.row].placemark
         handleMapSearchDelegate?.dropPinZoomIn(placemark: selectedItem)
+        //Finally, close the search results modal so the user can see the map.
         self.dismiss(animated: true, completion: nil)
     }
 }
