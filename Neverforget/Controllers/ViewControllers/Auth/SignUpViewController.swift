@@ -54,11 +54,14 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
         let defaults = UserDefaults.standard
-        UserFBController.signUpUser(email: signEmailField.text!, password: signPasswordField.text!, name: userNameField.text!, onSuccess: {
-            defaults.set(true, forKey: "isuserSignedin")
-            self.performSegue(withIdentifier: "userSignedupsegue", sender: nil)
-        }) { (error) in
-            self.present(Service.createAlertController(title: "Error", message: error!.localizedDescription), animated: true, completion: nil)
+        UserFBController.signUpUser(email: signEmailField.text!, password: signPasswordField.text!, name: userNameField.text!) { result in
+            switch result {
+            case .success:
+                defaults.set(true, forKey: "isuserSignedin")
+                self.performSegue(withIdentifier: "userSignedupsegue", sender: nil)
+            case .failure(let error):
+                self.present(Service.createAlertController(title: "Error", message: error.localizedDescription), animated: true, completion: nil)
+            }
         }
     }
 }

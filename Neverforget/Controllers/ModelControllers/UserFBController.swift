@@ -11,35 +11,47 @@ import FirebaseAuth
 import FirebaseDatabase
 import UserNotifications
 
+enum UserFBError: Error {
+    case currentUserNotFound
+}
+
 class UserFBController{
     
     var pickup_list : [PickupReturnModel] = []
     var return_list : [PickupReturnModel] = []
     var email = ""
     var name = ""
-    
-    static func signInUser(email: String, password: String, onSuccess: @escaping() -> Void, onError: @escaping (_ error: Error?) -> Void) {
+    // the completion closure takes a Result<Void, Error> parameter, where Void represents a successful result
+    static func signInUser(email: String, password: String, completion: @escaping (Result<Void, Error>) -> Void) {
         let auth = Auth.auth()
-        auth.signIn(withEmail: email, password: password) {(authResult, error) in
-            if error != nil {
-                onError(error)
-                return
+        auth.signIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
             }
-            onSuccess()
-        }
-        print("signin")
-    }
-    
-    static func signUpUser(email: String, password: String, name: String, onSuccess: @escaping() -> Void, onError: @escaping (_ error: Error?) -> Void) {
-        let auth = Auth.auth()
-        auth.createUser(withEmail: email, password: password) {(authResult, error) in
-            if error != nil {
-                onError(error)
-                return
-            }
-            uploadNewUserToDatabase(email: email, name: name, onSuccess: onSuccess)
         }
     }
+
+    
+    static func signUpUser(email: String, password: String, name: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        let auth = Auth.auth()
+        auth.createUser(withEmail: email, password: password) { authResult, error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                uploadNewUserToDatabase(email: email, name: name) { result in
+                    switch result {
+                    case .success:
+                        completion(.success(()))
+                    case .failure(let error):
+                        completion(.failure(error))
+                    }
+                }
+            }
+        }
+    }
+
     
     static func forgotPassword(email: String, onSuccess: @escaping() -> Void, onError: @escaping (_ error: Error?) -> Void) {
         let auth = Auth.auth()
@@ -76,13 +88,27 @@ class UserFBController{
         }
     }
     
-    static func uploadNewUserToDatabase(email: String, name: String, onSuccess: @escaping() -> Void) {
-        let rootref = Database.database().reference()
-        let ref = rootref.child("users")
-        let uid = Auth.auth().currentUser?.uid
-        ref.child(uid!).setValue(["email":email, "name":name, "entries": ""])
-        onSuccess()
+    static func uploadNewUserToDatabase(email: String, name: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            completion(.failure(UserFBError.currentUserNotFound))
+            return
+        }
+        
+        let rootRef = Database.database().reference()
+        let usersRef = rootRef.child("users")
+        let userRef = usersRef.child(uid)
+        
+        let values = ["email": email, "name": name, "entries": ""]
+        
+        userRef.setValue(values) { error, _ in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
+            }
+        }
     }
+
     
     public func getUserInfo(onSuccess: @escaping () -> Void, onError: @escaping (_ error: Error?) -> Void) {
         let ref = Database.database().reference()

@@ -48,13 +48,17 @@ class SignInViewController: UIViewController {
     
     @IBAction func signInButtonTapped(_ sender: Any) {
         let defaults = UserDefaults.standard
-        UserFBController.signInUser(email: emailField.text ?? "", password: passwordField.text ?? "", onSuccess: {
-            defaults.set(true, forKey: "isuserSignedin")
-            self.performSegue(withIdentifier: "userSignedInsegue", sender: nil)
-        }) { (error) in
-            self.present(Service.createAlertController(title: "Error", message: error!.localizedDescription), animated: true, completion: nil)
+        UserFBController.signInUser(email: emailField.text ?? "", password: passwordField.text ?? "") { result in
+            switch result {
+            case .success:
+                defaults.set(true, forKey: "isuserSignedin")
+                self.performSegue(withIdentifier: "userSignedInsegue", sender: nil)
+            case .failure(let error):
+                self.present(Service.createAlertController(title: "Error", message: error.localizedDescription), animated: true, completion: nil)
+            }
         }
     }
+
     
     @IBAction func forgotPWButtonTapped(_ sender: Any) {
         self.performSegue(withIdentifier: "forgotPWsegue", sender: nil)
