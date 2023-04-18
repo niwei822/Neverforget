@@ -16,15 +16,24 @@ class HomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
+        setUPUI()
+        checkIfUserIsSignedIn()
+    }
+    
+    private func setUPUI() {
         let backgroundimage = UIImageView(frame: UIScreen.main.bounds)
         backgroundimage.image = UIImage(named: "1234")
         backgroundimage.contentMode = .scaleAspectFill
         view.insertSubview(backgroundimage, at: 0)
+        
         SignUpButton.layer.cornerRadius = 10
         SignUpButton.clipsToBounds = true
-        //store data
+    }
+    
+    private func checkIfUserIsSignedIn() {
         let defaults = UserDefaults.standard
         if defaults.bool(forKey: "isuserSignedin") {
+            // If user is signed in, present the welcome view controller
             let viewController = self.storyboard?.instantiateViewController(identifier: "welcomeViewID") as! UINavigationController
             viewController.modalTransitionStyle = .crossDissolve
             viewController.modalPresentationStyle = .overFullScreen

@@ -33,16 +33,18 @@ class ForgotPWViewController: UIViewController {
     }
     
     @IBAction func forgotPWButtonTapped(_ sender: Any) {
-        UserFBController.forgotPassword(email: emailField.text ?? "") {
-            let alert = Service.createAlertController(title: "Hurray", message: "A password reset email has been sent!")
-            self.present(alert, animated: true, completion: nil)
-        } onError: { error in
-            let alert = Service.createAlertController(title: "Error", message: error?.localizedDescription ?? "error")
-            self.present(alert, animated: true, completion: nil)
-        }
+        UserFBController.forgotPassword(email: emailField.text ?? "") { result in
+            switch result {
+            case .success:
+                let alert = Service.createAlertController(title: "Hurray", message: "A password reset email has been sent!")
+                self.present(alert, animated: true, completion: nil)
+            case .failure(let error):
+                let alert = Service.createAlertController(title: "Error", message: error.localizedDescription )
+                self.present(alert, animated: true, completion: nil)
+            }
     }
 }
-
+}
 extension ForgotPWViewController: UITextFieldDelegate {
      func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder() // dismiss keyboard

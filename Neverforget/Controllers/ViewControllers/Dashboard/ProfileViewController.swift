@@ -35,11 +35,17 @@ class ProfileViewController:
         // Create OK button
         let OKAction = UIAlertAction(title: "Confirm", style: .default) { (action:UIAlertAction!) in
             // Code in this block will trigger when OK button tapped.
-            UserFBController.deleteuser()
-            defaults.set(false, forKey: "isuserSignedin")
-            self.performSegue(withIdentifier: "showHomePage", sender: nil)
-            print("Ok button tapped");
-        }
+            UserFBController.deleteuser() { error in
+                            if let error = error {
+                                print("Error deleting user account: \(error.localizedDescription)")
+                            } else {
+                                defaults.set(false, forKey: "isuserSignedin")
+                                self.performSegue(withIdentifier: "showHomePage", sender: nil)
+                                print("User account deleted successfully")
+                            }
+                        }
+                        
+                    }
         alertController.addAction(OKAction)
         // Create Cancel button
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction!) in

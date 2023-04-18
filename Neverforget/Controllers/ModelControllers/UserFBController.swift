@@ -13,9 +13,11 @@ import UserNotifications
 
 enum UserFBError: Error {
     case currentUserNotFound
+    case emailNotFound
+    case nameNotFound
 }
 
-class UserFBController{
+class UserFBController {
     
     var pickup_list : [PickupReturnModel] = []
     var return_list : [PickupReturnModel] = []
@@ -32,7 +34,7 @@ class UserFBController{
             }
         }
     }
-
+    
     
     static func signUpUser(email: String, password: String, name: String, completion: @escaping (Result<Void, Error>) -> Void) {
         let auth = Auth.auth()
@@ -51,21 +53,20 @@ class UserFBController{
             }
         }
     }
-
     
-    static func forgotPassword(email: String, onSuccess: @escaping() -> Void, onError: @escaping (_ error: Error?) -> Void) {
+    static func forgotPassword(email: String, completion: @escaping (Result<Void, Error>) -> Void) {
         let auth = Auth.auth()
-        auth.sendPasswordReset(withEmail: email) { (error) in
+        auth.sendPasswordReset(withEmail: email) { error in
             if let error = error {
-                onError(error)
-                return
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
             }
-            onSuccess()
         }
     }
     
-    static func deleteuser(){
-        
+    //Error by default is optional, either error or nil
+    static func deleteuser(completion: @escaping (Error?) -> Void) {
         let rootref = Database.database().reference()
         let ref = rootref.child("users")
         let uid = Auth.auth().currentUser?.uid
@@ -73,18 +74,19 @@ class UserFBController{
         notificationCenter.removeAllPendingNotificationRequests() //remove all pending notifications
         
         ref.child(uid!).removeValue { (error, ref) in
-            if error != nil {
-                print(error?.localizedDescription ?? "error")
+            if let error = error {
+                completion(error)
+                return
             }
         }
         
         let user = Auth.auth().currentUser
         user?.delete { error in
-          if error != nil {
-              print(error?.localizedDescription ?? "Error Delete Account")
-          } else {
-              print("Account Deleted")
-          }
+            if let error = error {
+                completion(error)
+            } else {
+                completion(nil)
+            }
         }
     }
     
@@ -108,7 +110,6 @@ class UserFBController{
             }
         }
     }
-
     
     public func getUserInfo(onSuccess: @escaping () -> Void, onError: @escaping (_ error: Error?) -> Void) {
         let ref = Database.database().reference()
@@ -116,16 +117,18 @@ class UserFBController{
             print("User not found")
             return
         }
+        // observe the 'users' node in Firebase database
         ref.child("users").child(uid).observe(.value, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String : Any] {
                 //save email as userEmailKey's value
-                self.email = dictionary["email"] as! String
-                self.name = dictionary["name"] as! String
+                self.email = dictionary["email"] as? String ?? ""
+                self.name = dictionary["name"] as? String ?? ""
                 onSuccess()
             }
         }) { (error) in
             onError(error)
         }
+        // observe the 'entries' node for the user's pickups and returns
         ref.child("users").child(uid).child("entries").observe(.value, with: { (snapshot) in
             self.pickup_list = []
             self.return_list = []
@@ -148,7 +151,7 @@ class UserFBController{
             onError(error)
         }
     }
-    
+
     static func uploadEntryToDatabase(storeName: String, itemName: String, notes: String, dueDate: String, remind_Day: String, remind_Hour: String, remind_Minute: String, options: String, timestamp: String) {
         let rootref = Database.database().reference()
         let ref = rootref.child("users")
@@ -177,4 +180,4 @@ class UserFBController{
     }
 }
 
-
+                                              
