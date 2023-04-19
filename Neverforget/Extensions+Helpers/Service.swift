@@ -37,5 +37,14 @@ class Service {
         formatter.dateFormat = "MM-dd-yyyy HH:mm"
         return formatter.date(from: date)!
     }
+    
+    static func setUpTextFieldUI(input: UITextField, placeholderText: String) {
+        input.layer.cornerRadius = 10
+        input.clipsToBounds = true
+        input.layer.masksToBounds = true
+        input.layer.borderColor = UIColor.purple.cgColor
+        input.layer.borderWidth = 0.1
+        input.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
+    }
 }
 

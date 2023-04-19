@@ -8,7 +8,7 @@
 import UIKit
 
 class HomePageViewController: UIViewController {
-
+    
     @IBOutlet weak var SignUpButton: UIButton!
     
     @IBOutlet weak var SignInButton: UIButton!
