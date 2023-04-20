@@ -12,8 +12,10 @@ import DropDown
 import UserNotifications
 
 class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
+    
     var options : String = ""
     var selectStore: String? = ""
+    
     @IBOutlet weak var storeField: UITextField!
     
     @IBOutlet weak var itemDetailField: UITextField!
@@ -33,26 +35,23 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
     let dropdown = DropDown()
     let notificationCenter = UNUserNotificationCenter.current()
     var identifier : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let backgroundimage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundimage.image = UIImage(named: "Lavender-Aesthetic-Wallpapers")
-        backgroundimage.contentMode = .scaleAspectFill
-        view.insertSubview(backgroundimage, at: 0)
+        setUpNavigationBar()
+        setUpTextFields()
+        requestNotificationPermission()
+        setUpBackgroundUI()
+    }
+
+    private func setUpNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(didTapsaveButton))
-        storeField.layer.masksToBounds = true
-        storeField.layer.borderColor = UIColor.purple.cgColor
-        storeField.layer.borderWidth = 0.1
-        storeField.attributedPlaceholder = NSAttributedString(string: "Enter store name:", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
-        itemDetailField.layer.masksToBounds = true
-        itemDetailField.layer.borderColor = UIColor.purple.cgColor
-        itemDetailField.layer.borderWidth = 0.1
-        itemDetailField.attributedPlaceholder = NSAttributedString(string: "What you want to return/pickup?", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
-        notesField.layer.masksToBounds = true
-        notesField.layer.borderColor = UIColor.purple.cgColor
-        notesField.layer.borderWidth = 0.1
-        notesField.attributedPlaceholder = NSAttributedString(string: "Notes:", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
+    }
+
+    private func setUpTextFields() {
+        Service.setUpTextFieldUI(input: storeField, placeholderText: "Enter store name:")
+        Service.setUpTextFieldUI(input: itemDetailField, placeholderText: "What you want to return/pickup?")
+        Service.setUpTextFieldUI(input: notesField, placeholderText: "Notes:")
         storeField.delegate = self
         itemDetailField.delegate = self
         notesField.delegate = self
@@ -60,16 +59,23 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
         reminderHourField.delegate = self
         reminderMinuteField.delegate = self
         datePicker.overrideUserInterfaceStyle = .light
-        //Requesting Notification Permission
-        notificationCenter.requestAuthorization(options: [.alert,.badge,  .sound]) {
-            (permissionGranted, error) in
-            if(!permissionGranted)
-            {
+    }
+
+    private func requestNotificationPermission() {
+        notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { (permissionGranted, error) in
+            if(!permissionGranted) {
                 print("Permission Denied")
             }
         }
     }
-    
+
+    private func setUpBackgroundUI() {
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "Lavender-Aesthetic-Wallpapers")
+        backgroundImage.contentMode = .scaleAspectFill
+        view.insertSubview(backgroundImage, at: 0)
+    }
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder() // dismiss keyboard
         return true
@@ -115,15 +121,17 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
             //update settings property on the main,send ui related work to main quene
             //excute main thread first while updating UIalert
             //The main queue is responsible for drawing UI and responding to user input.
-            //
+            //Move UI-related work to the main queue
             DispatchQueue.main.async
             { [self] in
+                // Get the values entered by the user
                 let title = storeField.text
                 let message =  options + " " + itemDetailField.text! + " " + notesField.text!
                 let date = datePicker.date
                 let reminderDay = reminderDayField.text
                 let reminderHour = reminderHourField.text
                 let reminderMinute = reminderMinuteField.text
+                
                 print(reminderDay! + "Days" + reminderHour! + "Hours" + reminderMinute! + "Minutes")
                 if (settings.authorizationStatus == .authorized) {
                     if self.options.isEmpty{
@@ -133,6 +141,7 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
                         ReminderController.shared.sendNotificationByDate(title: title ?? "", message: message, date: date, identifier: identifier)
                         self.present(Service.createAlertController(title: "Reminder Scheduled!", message: "At " + Service.formattedDate(date: self.datePicker.date)), animated: true, completion: nil)
                     } else {
+                        // Send a notification at a frequency determined by the user
                         ReminderController.shared.sendNotificationByFrequency(title: title ?? "", message: message, remindDay: reminderDay!, remindHour: reminderHour!, remindMinute: reminderMinute!, identifier: identifier)
                         self.present(Service.createAlertController(title: "Reminder Scheduled!", message: "Remind every " + (reminderDay ?? "0") + "Days" + (reminderHour ?? "0") + "Hours" + (reminderMinute ?? "0") + "Minutes"), animated: true, completion: nil)
                     }
@@ -156,6 +165,7 @@ class AddentryViewController: UIViewController, UITextViewDelegate, UITextFieldD
                 }
             }
         }
+        // If all required fields have been filled out, upload the entry to the database
         if let storeName = storeField.text, !storeName.isEmpty,
             let itemTitle = itemDetailField.text, !itemTitle.isEmpty,
             let note = notesField.text, !note.isEmpty,

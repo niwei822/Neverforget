@@ -11,14 +11,15 @@ import UserNotifications
 
 class ReminderController {
     
-    var identifier : String = ""
-    let notificationCenter = UNUserNotificationCenter.current()
-    static let shared = ReminderController()
-    private init() {}
-    var entries = [PickupReturnModel]()
-    var sections: [[PickupReturnModel]] { [Return, Pickup] }
-    var Return: [PickupReturnModel] = []
-    var Pickup: [PickupReturnModel] = []
+    // MARK: - Properties
+        
+        var identifier: String = ""
+
+        private let notificationCenter = UNUserNotificationCenter.current()
+        
+        static let shared = ReminderController()
+        
+        private init() {}
     
     func sendNotificationByDate(title: String, message: String, date: Date, identifier: String) {
         let content = UNMutableNotificationContent()
@@ -28,11 +29,9 @@ class ReminderController {
         let dateComp = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: false)
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-        self.notificationCenter.add(request) { (error) in
-            if(error != nil)
-            {
-                print("Error " + error.debugDescription)
-                return
+        self.notificationCenter.add(request) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
             }
         }
     }
@@ -44,23 +43,11 @@ class ReminderController {
         let t_interval = Double(remindDay)! * 24 * 3600 + Double(remindHour)! * 3600 + Double(remindMinute)! * 60
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: t_interval, repeats: true)
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-        self.notificationCenter.add(request) { (error) in
-            if(error != nil)
-            {
-                print("Error " + error.debugDescription)
-                return
+        self.notificationCenter.add(request) { error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
             }
         }
-    }
-    
-    func deleteEntry(_ entry: PickupReturnModel) {
-        if let index = Return.firstIndex(of: entry) {
-            Return.remove(at: index)
-        } else if let index = Pickup.firstIndex(of: entry) {
-            Pickup.remove(at: index)
-        }
-        UserFBController.deleteEntryFromDatebase(timestamp: entry.timestamp)
-        removeScheduledNotification(for: entry)
     }
     
     func removeScheduledNotification(for entry: PickupReturnModel) {

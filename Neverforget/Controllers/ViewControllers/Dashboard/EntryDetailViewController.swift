@@ -12,10 +12,15 @@ import UserNotifications
 class EntryDetailViewController: UIViewController {
     
     @IBOutlet weak var OptionButton: UIButton!
+    
     @IBOutlet weak var storeField: UITextField!
+    
     @IBOutlet weak var itemDetailField: UITextField!
+    
     @IBOutlet weak var notesField: UITextField!
+    
     @IBOutlet weak var datePicker: UIDatePicker!
+    
     @IBOutlet weak var reminderDayField: UITextField!
     
     @IBOutlet weak var reminderHourField: UITextField!
@@ -28,31 +33,34 @@ class EntryDetailViewController: UIViewController {
     var entry: PickupReturnModel?
     var date: Date?
     let notificationCenter = UNUserNotificationCenter.current()
+    
+    public var completion: ((String, String, String, String) -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let backgroundimage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundimage.image = UIImage(named: "Lavender-Aesthetic-Wallpapers")
-        backgroundimage.contentMode = .scaleAspectFill
-        view.insertSubview(backgroundimage, at: 0)
+        setUpTextFields()
+        setUpBackgroundUI()
         updateViews()
-        storeField.layer.masksToBounds = true
-        storeField.layer.borderColor = UIColor.purple.cgColor
-        storeField.layer.borderWidth = 0.1
-        storeField.attributedPlaceholder = NSAttributedString(string: "Enter store name:", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
-        itemDetailField.layer.masksToBounds = true
-        itemDetailField.layer.borderColor = UIColor.purple.cgColor
-        itemDetailField.layer.borderWidth = 0.1
-        itemDetailField.attributedPlaceholder = NSAttributedString(string: "What you want to return/pickup?", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
-        notesField.layer.masksToBounds = true
-        notesField.layer.borderColor = UIColor.purple.cgColor
-        notesField.layer.borderWidth = 0.1
-        notesField.attributedPlaceholder = NSAttributedString(string: "Notes:", attributes: [NSAttributedString.Key.foregroundColor: UIColor.purple])
+    }
+    
+    private func setUpTextFields() {
+        Service.setUpTextFieldUI(input: storeField, placeholderText: "Enter store name:")
+        Service.setUpTextFieldUI(input: itemDetailField, placeholderText: "What you want to return/pickup?")
+        Service.setUpTextFieldUI(input: notesField, placeholderText: "Notes:")
         storeField.delegate = self
         itemDetailField.delegate = self
         notesField.delegate = self
         reminderDayField.delegate = self
         reminderHourField.delegate = self
         reminderMinuteField.delegate = self
+        datePicker.overrideUserInterfaceStyle = .light
+    }
+    
+    private func setUpBackgroundUI() {
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "Lavender-Aesthetic-Wallpapers")
+        backgroundImage.contentMode = .scaleAspectFill
+        view.insertSubview(backgroundImage, at: 0)
     }
     
     @IBAction func checkPolicyButton(_ sender: UIButton) {
@@ -100,6 +108,7 @@ class EntryDetailViewController: UIViewController {
             self.present(Service.createAlertController(title: "Reminder Updated!", message: "Remind every " + (remindDay ) + "Days" + (remindHour ) + "Hours" + (remindMinute ) + "Minutes"), animated: true, completion: nil)
         }
         navigationController?.popViewController(animated: true)
+
     }
     
     @IBAction func DatepickerTapped(_ sender: Any) {
