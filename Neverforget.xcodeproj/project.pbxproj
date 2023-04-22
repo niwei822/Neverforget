@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C4332DB29F24CF000DCF050 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4332DA29F24CF000DCF050 /* EntryDetailViewController.swift */; };
 		8C917A002884838B008F9FAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9179FF2884838B008F9FAB /* AppDelegate.swift */; };
 		8C917A022884838B008F9FAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C917A012884838B008F9FAB /* SceneDelegate.swift */; };
 		8C917A072884838B008F9FAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C917A052884838B008F9FAB /* Main.storyboard */; };
@@ -20,7 +21,6 @@
 		8C917A2B28848DD7008F9FAB /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C917A2A28848DD7008F9FAB /* SignInViewController.swift */; };
 		8C917A2D28848E0E008F9FAB /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C917A2C28848E0E008F9FAB /* SignUpViewController.swift */; };
 		8C917A2F28848E40008F9FAB /* ForgotPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C917A2E28848E40008F9FAB /* ForgotPWViewController.swift */; };
-		8C917A342884FE4B008F9FAB /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C917A332884FE4B008F9FAB /* EntryDetailViewController.swift */; };
 		8C930530289599DB0015D467 /* Lucy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C93052F289599DB0015D467 /* Lucy.ttf */; };
 		8C9305342895A4BE0015D467 /* StayolaHeartPersonalUseRegular-x3p60.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C9305332895A4BE0015D467 /* StayolaHeartPersonalUseRegular-x3p60.otf */; };
 		8C9305362895A4C80015D467 /* Deysiabrush-mLgWV.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C9305352895A4C80015D467 /* Deysiabrush-mLgWV.ttf */; };
@@ -52,6 +52,7 @@
 /* Begin PBXFileReference section */
 		2E0F80B6EC612A129F4B22F9 /* Pods-Neverforget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neverforget.debug.xcconfig"; path = "Target Support Files/Pods-Neverforget/Pods-Neverforget.debug.xcconfig"; sourceTree = "<group>"; };
 		7841CEFA5406833D4EFEEEDC /* Pods_Neverforget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neverforget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C4332DA29F24CF000DCF050 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntryDetailViewController.swift; path = ../../../../../../../.Trash/EntryDetailViewController.swift; sourceTree = "<group>"; };
 		8C9179FC2884838B008F9FAB /* Neverforget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neverforget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C9179FF2884838B008F9FAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C917A012884838B008F9FAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +68,6 @@
 		8C917A2A28848DD7008F9FAB /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		8C917A2C28848E0E008F9FAB /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8C917A2E28848E40008F9FAB /* ForgotPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPWViewController.swift; sourceTree = "<group>"; };
-		8C917A332884FE4B008F9FAB /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		8C93052F289599DB0015D467 /* Lucy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lucy.ttf; sourceTree = "<group>"; };
 		8C9305332895A4BE0015D467 /* StayolaHeartPersonalUseRegular-x3p60.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "StayolaHeartPersonalUseRegular-x3p60.otf"; sourceTree = "<group>"; };
 		8C9305352895A4C80015D467 /* Deysiabrush-mLgWV.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Deysiabrush-mLgWV.ttf"; sourceTree = "<group>"; };
@@ -191,7 +191,7 @@
 				8CCC2AB9290C83FA0016EEE0 /* ProfileViewController.swift */,
 				8C917A1C28848765008F9FAB /* EntryListViewController.swift */,
 				8C917A1E288489EE008F9FAB /* AddentryViewController.swift */,
-				8C917A332884FE4B008F9FAB /* EntryDetailViewController.swift */,
+				8C4332DA29F24CF000DCF050 /* EntryDetailViewController.swift */,
 				8C4454B428AF23790068532E /* Map */,
 			);
 			path = Dashboard;
@@ -388,9 +388,9 @@
 				8C917A2D28848E0E008F9FAB /* SignUpViewController.swift in Sources */,
 				8C9B0846289373380089B443 /* ReturnPolicyWebsiteController.swift in Sources */,
 				8C9D1AE52886527700EF0A77 /* ReminderController.swift in Sources */,
+				8C4332DB29F24CF000DCF050 /* EntryDetailViewController.swift in Sources */,
 				8C917A2428848A5A008F9FAB /* Service.swift in Sources */,
 				8C917A2728848A93008F9FAB /* HomePageViewController.swift in Sources */,
-				8C917A342884FE4B008F9FAB /* EntryDetailViewController.swift in Sources */,
 				8C917A1D28848765008F9FAB /* EntryListViewController.swift in Sources */,
 				8CCC2ABA290C83FA0016EEE0 /* ProfileViewController.swift in Sources */,
 				8C917A002884838B008F9FAB /* AppDelegate.swift in Sources */,
